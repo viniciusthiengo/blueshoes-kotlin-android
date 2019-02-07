@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">BlueShoes</string>
+
+    <string name="navigation_drawer_open">Menu gaveta aberto</string>
+    <string name="navigation_drawer_close">Menu gaveta fechado</string>
+
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tx_login">Login</string>
+    <string name="tx_or">ou</string>
+    <string name="tx_me_sign_up">me Cadastrar</string>
+    <string name="tx_conected_as">Conectado como:</string>
+
+    <string name="item_all_shoes">Todos os calçados</string>
+    <string name="item_flip_flops">Chinelos</string>
+    <string name="item_cleats">Chuteiras</string>
+    <string name="item_sandals">Sandálias</string>
+    <string name="item_ballet_shoes">Sapatilhas</string>
+    <string name="item_suit_shoes">Sapatênis</string>
+    <string name="item_shoes">Tênis</string>
+    <string name="item_performance_shoes">Tênis performance</string>
+    <string name="item_contact">Contato BlueShoes</string>
+    <string name="item_about">Sobre</string>
+    <string name="item_privacy_policy">Políticas de privacidade</string>
+    <string name="item_my_orders">Meus pedidos</string>
+    <string name="item_settings">Minhas configurações</string>
+    <string name="item_sign_out">Sair</string>
+</resources>

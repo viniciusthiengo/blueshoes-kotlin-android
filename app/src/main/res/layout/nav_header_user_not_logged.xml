@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_header_user_not_logged"
+        android:background="@drawable/nav_header"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+            android:id="@+id/bt_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bt_nav_header_login_bg"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:text="@string/tx_login"/>
+
+    <TextView
+            android:id="@+id/tv_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/bt_login"
+            android:layout_toEndOf="@+id/bt_login"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:textColor="@color/colorText"
+            android:text="@string/tx_or"/>
+
+    <TextView
+            android:id="@+id/tv_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_or"
+            android:layout_toEndOf="@+id/tv_or"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorLink"
+            android:text="@string/tx_me_sign_up"/>
+</RelativeLayout>

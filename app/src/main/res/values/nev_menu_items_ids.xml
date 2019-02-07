@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="item_01" type="id" format="integer" />
+    <item name="item_02" type="id" format="integer" />
+    <item name="item_03" type="id" format="integer" />
+    <item name="item_04" type="id" format="integer" />
+    <item name="item_05" type="id" format="integer" />
+    <item name="item_06" type="id" format="integer" />
+    <item name="item_07" type="id" format="integer" />
+    <item name="item_08" type="id" format="integer" />
+    <item name="item_09" type="id" format="integer" />
+    <item name="item_10" type="id" format="integer" />
+    <item name="item_11" type="id" format="integer" />
+    <item name="item_12" type="id" format="integer" />
+    <item name="item_13" type="id" format="integer" />
+    <item name="item_14" type="id" format="integer" />
+</resources>
