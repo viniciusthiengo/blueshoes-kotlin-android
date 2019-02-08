@@ -9,4 +9,5 @@
     <color name="colorNavButton">#77D353</color>
 
     <color name="colorNavItemSelected">#F1F1F1</color>
+    <color name="colorViewLine">#ddd</color>
 </resources>

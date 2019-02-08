@@ -13,7 +13,7 @@ import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.NavMenuItem
 import thiengo.com.br.blueshoes.util.NavMenuItemDetails
 
-class NavMenuItemsAdapter( val menuItems: List<NavMenuItem> ) :
+class NavMenuItemsAdapter( val items: List<NavMenuItem> ) :
     RecyclerView.Adapter<NavMenuItemsAdapter.ViewHolder>() {
 
     lateinit var selectionTracker: SelectionTracker<Long>
@@ -37,10 +37,10 @@ class NavMenuItemsAdapter( val menuItems: List<NavMenuItem> ) :
         holder: ViewHolder,
         position: Int ) {
 
-        holder.setData( menuItems[ position ] )
+        holder.setData( items[ position ] )
     }
 
-    override fun getItemCount() = menuItems.size
+    override fun getItemCount() = items.size
 
     inner class ViewHolder( itemView: View ) :
         RecyclerView.ViewHolder( itemView ){
@@ -61,7 +61,7 @@ class NavMenuItemsAdapter( val menuItems: List<NavMenuItem> ) :
 
             tvLabel.text = item.label
 
-            if( item.iconId != NavMenuItem.DEFAULT_ID ){
+            if( item.iconId != NavMenuItem.DEFAULT_ICON_ID ){
                 ivIcon.setImageResource( item.iconId )
                 ivIcon.visibility = View.VISIBLE
             }
@@ -72,9 +72,7 @@ class NavMenuItemsAdapter( val menuItems: List<NavMenuItem> ) :
             /*
              * São nos blocos condicionais a seguir que devem vir os
              * algoritmos de atualização de UI, isso para indicar o
-             * item selecionado e os itens não selecionados. Seguindo
-             * as dicas da comunidade, sempre utilize o isActivated
-             * no View container de item.
+             * item selecionado e os itens não selecionados.
              * */
             itemDetails.item = item
             itemDetails.adapterPosition = adapterPosition

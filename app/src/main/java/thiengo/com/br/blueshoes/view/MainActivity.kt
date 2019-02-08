@@ -34,7 +34,11 @@ class MainActivity :
         const val LOG = "log-bs"
     }
 
-    val user = User( true )
+    val user = User(
+        "Thiengo Vinícius",
+        R.drawable.user,
+        true
+    )
 
     lateinit var navMenuItems : List<NavMenuItem>
     lateinit var selectNavMenuItems: SelectionTracker<Long>
@@ -81,7 +85,8 @@ class MainActivity :
         navMenuItems = navMenu.items
         navMenuItemsLogged = navMenu.itemsLogged
 
-        showHideNavMenuViews( user )
+        showHideNavMenuViews()
+        fillUserHeaderNavMenu()
 
         initNavMenuItems()
         initNavMenuItemsLogged()
@@ -104,7 +109,7 @@ class MainActivity :
      * Método responsável por esconder itens do menu gaveta de
      * acordo com o status do usuário (conectado ou não).
      * */
-    private fun showHideNavMenuViews( user: User ){
+    private fun showHideNavMenuViews(){
         if( user.status ){ /* Conectado */
             rl_header_user_not_logged.visibility = View.GONE
         }
@@ -115,9 +120,16 @@ class MainActivity :
         }
     }
 
+    private fun fillUserHeaderNavMenu(){
+        if( user.status ) { /* Conectado */
+            iv_user.setImageResource(user.image)
+            tv_user.text = user.name
+        }
+    }
+
     /*
      * Método que inicializa a lista de itens de menu gaveta
-     * que estará presente quando o usuário está ou não
+     * que estará presente quando o usuário estiver ou não
      * conectado ao aplicativo.
      * */
     private fun initNavMenuItems(){
@@ -197,8 +209,9 @@ class MainActivity :
         (rv_menu_items_logged.adapter as NavMenuItemsAdapter).selectionTracker = selectNavMenuItemsLogged
     }
 
-    inner class SelectObserverNavMenuItems( val callbackRemoveSelection: ()->Unit )
-        : SelectionTracker.SelectionObserver<Long>(){
+    inner class SelectObserverNavMenuItems(
+            val callbackRemoveSelection: ()->Unit
+        ) : SelectionTracker.SelectionObserver<Long>(){
 
         /*
          * Método responsável por permitir que seja possível

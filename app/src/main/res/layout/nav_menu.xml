@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/ll_menu_drawer"
-        android:orientation="vertical"
-        android:layout_gravity="start"
-        android:layout_width="320dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_menu_drawer"
+    android:orientation="vertical"
+    android:layout_gravity="start"
+    android:layout_width="320dp"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
     <include layout="@layout/nav_header_user_not_logged"/>
 
     <include layout="@layout/nav_header_user_logged"/>
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_menu_items"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:scrollbars="vertical"/>
+        android:id="@+id/rv_menu_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="vertical"/>
 
     <View
-            android:id="@+id/v_nav_vertical_line"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#ddd"/>
+        android:id="@+id/v_nav_vertical_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorViewLine"/>
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_menu_items_logged"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"/>
+        android:id="@+id/rv_menu_items_logged"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
 </LinearLayout>
