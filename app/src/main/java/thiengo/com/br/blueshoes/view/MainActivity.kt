@@ -101,7 +101,7 @@ class MainActivity :
              * caso não seja uma reinicialização de tela / atividade.
              * O primeiro item aqui é o de ID 1.
              * */
-            selectNavMenuItems.select( R.id.item_01.toLong() )
+            selectNavMenuItems.select( R.id.item_all_shoes.toLong() )
         }
     }
 
@@ -272,11 +272,21 @@ class MainActivity :
     }
 
     override fun onCreateOptionsMenu( menu: Menu ): Boolean {
+        /*
+         * Infla o menu. Adiciona itens a barra de topo, se
+         * ela estiver presente.
+         * */
         menuInflater.inflate( R.menu.main, menu )
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        /*
+         * Lidar com cliques de itens da barra de ação aqui.
+         * A barra de ação manipulará automaticamente os
+         * cliques no botão Home / Up, desde que seja
+         * especificada uma atividade pai em AndroidManifest.xml.
+         * */
         when( item.itemId ) {
             R.id.action_settings -> return true
             else -> return super.onOptionsItemSelected( item )

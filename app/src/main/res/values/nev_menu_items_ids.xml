@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="item_01" type="id" format="integer" />
-    <item name="item_02" type="id" format="integer" />
-    <item name="item_03" type="id" format="integer" />
-    <item name="item_04" type="id" format="integer" />
-    <item name="item_05" type="id" format="integer" />
-    <item name="item_06" type="id" format="integer" />
-    <item name="item_07" type="id" format="integer" />
-    <item name="item_08" type="id" format="integer" />
-    <item name="item_09" type="id" format="integer" />
-    <item name="item_10" type="id" format="integer" />
-    <item name="item_11" type="id" format="integer" />
-    <item name="item_12" type="id" format="integer" />
-    <item name="item_13" type="id" format="integer" />
-    <item name="item_14" type="id" format="integer" />
+    <!--
+        Segundo testes, foi observado que os valores inteiros
+        dos IDs são adicionados na ordem crescente de
+        declaração de <itens>.
+    -->
+    <item name="item_all_shoes" type="id" format="integer" />
+    <item name="item_flip_flops" type="id" format="integer" />
+    <item name="item_cleats" type="id" format="integer" />
+    <item name="item_sandals" type="id" format="integer" />
+    <item name="item_ballet_shoes" type="id" format="integer" />
+    <item name="item_suit_shoes" type="id" format="integer" />
+    <item name="item_shoes" type="id" format="integer" />
+    <item name="item_performance_shoes" type="id" format="integer" />
+    <item name="item_contact" type="id" format="integer" />
+    <item name="item_about" type="id" format="integer" />
+    <item name="item_privacy_policy" type="id" format="integer" />
+    <item name="item_my_orders" type="id" format="integer" />
+    <item name="item_settings" type="id" format="integer" />
+    <item name="item_sign_out" type="id" format="integer" />
 </resources>

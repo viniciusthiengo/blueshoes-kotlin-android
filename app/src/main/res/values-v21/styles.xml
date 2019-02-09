@@ -1,5 +1,13 @@
 <resources>
+
+    <!--
+        Para que a barra de topo padrão não seja utilizada e
+        assim somente o AppBarLayout junto ao Toolbar possam
+        ser usados. Somando a isso a aplicação de transparência
+        na statusBar.
+    -->
     <style name="AppTheme.NoActionBar">
+
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#f9f9f9</color>
-    <color name="colorPrimaryDark">#c6c6c6</color>
-    <color name="colorAccent">#f5f5f5</color>
+    <color name="colorPrimary">#F9F9F9</color>
+    <color name="colorPrimaryDark">#C6C6C6</color>
+    <color name="colorAccent">#F5F5F5</color>
 
     <color name="colorText">#666666</color>
     <color name="colorLink">#00A6FF</color>
     <color name="colorNavButton">#77D353</color>
+    <color name="colorViewLine">#DDDDDD</color>
 
     <color name="colorNavItemSelected">#F1F1F1</color>
-    <color name="colorViewLine">#ddd</color>
 </resources>
