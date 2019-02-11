@@ -86,7 +86,6 @@ class MainActivity :
         navMenuItemsLogged = navMenu.itemsLogged
 
         showHideNavMenuViews()
-        fillUserHeaderNavMenu()
 
         initNavMenuItems()
         initNavMenuItemsLogged()
@@ -112,6 +111,7 @@ class MainActivity :
     private fun showHideNavMenuViews(){
         if( user.status ){ /* Conectado */
             rl_header_user_not_logged.visibility = View.GONE
+            fillUserHeaderNavMenu()
         }
         else{  /* Não conectado */
             rl_header_user_logged.visibility = View.GONE
