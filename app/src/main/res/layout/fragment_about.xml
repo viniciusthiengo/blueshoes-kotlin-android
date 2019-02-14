@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:context=".view.AboutFragment">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+        <TextView
+                android:id="@+id/tv_mission_title"
+                style="@style/TextViewContentTitle"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_mission_title"/>
+
+        <TextView
+                android:id="@+id/tv_mission_desc"
+                style="@style/AboutFragTextViewContent"
+                android:layout_below="@+id/tv_mission_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_mission_desc"/>
+
+        <TextView
+                android:id="@+id/tv_vision_title"
+                style="@style/TextViewContentTitle"
+                android:layout_below="@+id/tv_mission_desc"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_vision_title"/>
+
+        <TextView
+                android:id="@+id/tv_vision_desc"
+                style="@style/AboutFragTextViewContent"
+                android:layout_below="@+id/tv_vision_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_vision_desc"/>
+
+        <TextView
+                android:id="@+id/tv_values_title"
+                style="@style/TextViewContentTitle"
+                android:layout_below="@+id/tv_vision_desc"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_values_title"/>
+
+        <TextView
+                android:id="@+id/tv_values_desc"
+                style="@style/AboutFragTextViewContent"
+                android:layout_below="@+id/tv_values_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_values_desc"/>
+
+        <TextView
+                android:id="@+id/tv_ethic_title"
+                style="@style/TextViewContentTitle"
+                android:layout_below="@+id/tv_values_desc"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_ethic_title"/>
+
+        <TextView
+                android:id="@+id/tv_ethic_desc"
+                style="@style/AboutFragTextViewContent"
+                android:layout_below="@+id/tv_ethic_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_ethic_desc"/>
+
+        <TextView
+                android:id="@+id/tv_social_networks_title"
+                style="@style/TextViewContentTitle"
+                android:layout_marginBottom="14dp"
+                android:layout_below="@+id/tv_ethic_desc"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/about_frag_social_networks_title"/>
+
+        <ImageView
+                android:id="@+id/iv_instagram"
+                style="@style/ImageViewLink"
+                android:layout_below="@+id/tv_social_networks_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/ic_instagram_desc"
+                android:src="@drawable/ic_instagram_black_18dp"/>
+        <TextView
+                android:id="@+id/tv_instagram"
+                style="@style/TextViewLink"
+                android:layout_alignTop="@+id/iv_instagram"
+                android:layout_toEndOf="@+id/iv_instagram"
+                android:layout_toRightOf="@+id/iv_instagram"
+                android:text="@string/label_instagram"/>
+
+        <ImageView
+                android:id="@+id/iv_facebook"
+                style="@style/ImageViewLink"
+                android:layout_below="@+id/iv_instagram"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/ic_facebook_desc"
+                android:src="@drawable/ic_facebook_box_black_18dp"/>
+        <TextView
+                android:id="@+id/tv_facebook"
+                style="@style/TextViewLink"
+                android:layout_alignTop="@+id/iv_facebook"
+                android:layout_toEndOf="@+id/iv_facebook"
+                android:layout_toRightOf="@+id/iv_facebook"
+                android:text="@string/label_facebook"/>
+
+        <ImageView
+                android:id="@+id/iv_twitter"
+                style="@style/ImageViewLink"
+                android:layout_below="@+id/iv_facebook"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/ic_twitter_desc"
+                android:src="@drawable/ic_twitter_black_18dp"/>
+        <TextView
+                android:id="@+id/tv_twitter"
+                style="@style/TextViewLink"
+                android:layout_alignTop="@+id/iv_twitter"
+                android:layout_toEndOf="@+id/iv_twitter"
+                android:layout_toRightOf="@+id/iv_twitter"
+                android:text="@string/label_twitter"/>
+
+        <ImageView
+                android:id="@+id/iv_youtube"
+                style="@style/ImageViewLink"
+                android:layout_below="@+id/iv_twitter"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/ic_youtube_desc"
+                android:src="@drawable/ic_youtube_black_18dp"/>
+        <TextView
+                android:id="@+id/tv_youtube"
+                style="@style/TextViewLink"
+                android:layout_alignTop="@+id/iv_youtube"
+                android:layout_toEndOf="@+id/iv_youtube"
+                android:layout_toRightOf="@+id/iv_youtube"
+                android:text="@string/label_youtube"/>
+
+        <ImageView
+                android:id="@+id/iv_linkedin"
+                style="@style/ImageViewLink"
+                android:layout_below="@+id/iv_youtube"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/ic_linkedin_desc"
+                android:src="@drawable/ic_linkedin_box_black_18dp"/>
+        <TextView
+                android:id="@+id/tv_linkedin"
+                style="@style/TextViewLink"
+                android:layout_alignTop="@+id/iv_linkedin"
+                android:layout_toEndOf="@+id/iv_linkedin"
+                android:layout_toRightOf="@+id/iv_linkedin"
+                android:text="@string/label_linkedin"/>
+
+        <TextView
+                android:id="@+id/tv_linkedin_info"
+                style="@style/TextViewOrangeInfo"
+                android:layout_alignTop="@+id/tv_linkedin"
+                android:layout_toEndOf="@+id/tv_linkedin"
+                android:layout_toRightOf="@+id/tv_linkedin"
+                android:text="@string/info_linkedin"/>
+
+        <LinearLayout
+                android:layout_marginTop="24dp"
+                android:layout_below="@+id/iv_linkedin"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:id="@+id/iv_cnpj"
+                    style="@style/ImageViewLink"
+                    android:layout_marginBottom="0dp"
+                    android:tint="@color/colorText"
+                    android:contentDescription="@string/ic_cnpj_desc"
+                    android:src="@drawable/ic_domain_black_18dp"/>
+            <TextView
+                    android:id="@+id/tv_cnpj"
+                    style="@style/TextViewLink"
+                    android:textColor="@color/colorText"
+                    android:text="@string/label_cnpj"/>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

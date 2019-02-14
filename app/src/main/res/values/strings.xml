@@ -25,4 +25,53 @@
     <string name="item_my_orders">Meus pedidos</string>
     <string name="item_settings">Minhas configurações</string>
     <string name="item_sign_out">Sair</string>
+
+
+    <!-- AboutFragment -->
+    <string name="about_frag_mission_title">Missão</string>
+    <string name="about_frag_mission_desc">
+        Inspirar e transformar a vida das pessoas com calçados que
+        permitem qualquer atividade no dia a dia.
+    </string>
+
+    <string name="about_frag_vision_title">Visão</string>
+    <string name="about_frag_vision_desc">
+        A melhor e mais inovadora experiência de compra do varejo
+        de calçados.
+    </string>
+
+    <string name="about_frag_values_title">Valores</string>
+    <string name="about_frag_values_desc">
+        Ética, responsabilidade, espírito de equipe, inspiração e
+        foco.
+    </string>
+
+    <string name="about_frag_ethic_title">Ética e integridade</string>
+    <string name="about_frag_ethic_desc">
+        A ética e a integridade fazem parte da nossa cultura e são
+        essenciais para o nosso negócio.
+    </string>
+
+    <string name="about_frag_social_networks_title">
+        Nos acompanhe nas redes sociais e não perca as promoções
+    </string>
+
+    <string name="ic_instagram_desc">Ícone do Instagram BlueShoes</string>
+    <string name="label_instagram">/BlueShoes</string>
+
+    <string name="ic_facebook_desc">Ícone do Facebook BlueShoes</string>
+    <string name="label_facebook">/BlueShoesFace</string>
+
+    <string name="ic_twitter_desc">Ícone do Twitter BlueShoes</string>
+    <string name="label_twitter">/BlueShoesTwitter</string>
+
+    <string name="ic_youtube_desc">Ícone do YouTube BlueShoes</string>
+    <string name="label_youtube">/BlueShoesYT</string>
+
+    <string name="ic_linkedin_desc">Ícone do LinkedIn BlueShoes</string>
+    <string name="label_linkedin">/BlueShoesLkIn</string>
+    <string name="info_linkedin">Para oportunidades de emprego!</string>
+
+    <string name="ic_cnpj_desc">Ícone do CNPJ BlueShoes</string>
+    <string name="label_cnpj">CNPJ 25.002.230/0001&#8211;10</string>
 </resources>

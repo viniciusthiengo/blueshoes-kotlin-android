@@ -1,6 +1,7 @@
 package thiengo.com.br.blueshoes.view
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -32,6 +33,7 @@ class MainActivity :
      * */
     companion object {
         const val LOG = "log-bs"
+        const val FRAGMENT_TAG = "frag-tag"
     }
 
     val user = User(
@@ -61,6 +63,8 @@ class MainActivity :
         toggle.syncState()
 
         initNavMenu( savedInstanceState )
+
+        initFragment()
     }
 
     override fun onSaveInstanceState( outState: Bundle? ) {
@@ -209,9 +213,78 @@ class MainActivity :
         (rv_menu_items_logged.adapter as NavMenuItemsAdapter).selectionTracker = selectNavMenuItemsLogged
     }
 
+
+
+    private fun initFragment(){
+        val supFrag = supportFragmentManager
+        var fragment = supFrag.findFragmentByTag( FRAGMENT_TAG )
+
+        if( fragment == null ){
+            fragment = getFragment( AboutFragment.ID )
+        }
+
+        replaceFragment( fragment )
+    }
+
+    private fun getFragment( fragId: Int ): Fragment{
+
+        return when( fragId ){
+            AboutFragment.ID -> AboutFragment()
+            else -> AboutFragment()
+        }
+    }
+
+    private fun replaceFragment( fragment: Fragment ){
+        val transaction = supportFragmentManager.beginTransaction()
+
+        transaction
+            .replace(
+                R.id.fl_fragment_container,
+                fragment,
+                FRAGMENT_TAG
+            )
+            .commit()
+    }
+
+
+
+    override fun onBackPressed() {
+        if( drawer_layout.isDrawerOpen( GravityCompat.START ) ){
+            drawer_layout.closeDrawer( GravityCompat.START )
+        }
+        else{
+            super.onBackPressed()
+        }
+    }
+
+    override fun onCreateOptionsMenu( menu: Menu ): Boolean {
+        /*
+         * Infla o menu. Adiciona itens a barra de topo, se
+         * ela estiver presente.
+         * */
+        menuInflater.inflate( R.menu.main, menu )
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        /*
+         * Lidar com cliques de itens da barra de ação aqui.
+         * A barra de ação manipulará automaticamente os
+         * cliques no botão Home / Up, desde que seja
+         * especificada uma atividade pai em AndroidManifest.xml.
+         * */
+        when( item.itemId ) {
+            R.id.action_settings -> return true
+            else -> return super.onOptionsItemSelected( item )
+        }
+    }
+
+
+
     inner class SelectObserverNavMenuItems(
-            val callbackRemoveSelection: ()->Unit
-        ) : SelectionTracker.SelectionObserver<Long>(){
+        val callbackRemoveSelection: ()->Unit
+    ) :
+        SelectionTracker.SelectionObserver<Long>(){
 
         /*
          * Método responsável por permitir que seja possível
@@ -255,41 +328,18 @@ class MainActivity :
              * TODO: Mudança de Fragment
              * */
 
+            val fragment = when( key ){
+                R.id.item_about.toLong() -> getFragment( AboutFragment.ID )
+                else -> getFragment( AboutFragment.ID )
+            }
+
+            replaceFragment( fragment )
+
+
             /*
              * Fechando o menu gaveta.
              * */
             drawer_layout.closeDrawer( GravityCompat.START )
-        }
-    }
-
-    override fun onBackPressed() {
-        if( drawer_layout.isDrawerOpen( GravityCompat.START ) ){
-            drawer_layout.closeDrawer( GravityCompat.START )
-        }
-        else{
-            super.onBackPressed()
-        }
-    }
-
-    override fun onCreateOptionsMenu( menu: Menu ): Boolean {
-        /*
-         * Infla o menu. Adiciona itens a barra de topo, se
-         * ela estiver presente.
-         * */
-        menuInflater.inflate( R.menu.main, menu )
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        /*
-         * Lidar com cliques de itens da barra de ação aqui.
-         * A barra de ação manipulará automaticamente os
-         * cliques no botão Home / Up, desde que seja
-         * especificada uma atividade pai em AndroidManifest.xml.
-         * */
-        when( item.itemId ) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected( item )
         }
     }
 }
