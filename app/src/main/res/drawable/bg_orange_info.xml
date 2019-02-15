@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
 
-    <stroke android:color="@color/colorOrangeInfo" android:width="1dp" />
+    <!--
+        Definindo bordas de 1dp de espessura e na cor laranja.
+    -->
+    <stroke
+        android:color="@color/colorOrangeInfo"
+        android:width="1dp" />
 
+    <!--
+        Definindo bordas arredondadas na View retangular.
+    -->
     <corners android:radius="5dp" />
 </shape>

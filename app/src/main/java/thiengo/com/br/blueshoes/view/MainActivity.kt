@@ -219,6 +219,11 @@ class MainActivity :
         val supFrag = supportFragmentManager
         var fragment = supFrag.findFragmentByTag( FRAGMENT_TAG )
 
+        /*
+         * Se não for uma reconstrução de atividade, então não
+         * haverá um fragmento em memória, então busca-se o
+         * inicial.
+         * */
         if( fragment == null ){
             fragment = getFragment( AboutFragment.ID )
         }

@@ -122,6 +122,11 @@ class AboutFragment :
             startActivity( intent )
         }
         catch( e: ActivityNotFoundException ){
+            /*
+             * Se não houver o aplicativo da rede
+             * social acionada, então abra a página
+             * no navegador padrão do aparelho, Web.
+             * */
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
