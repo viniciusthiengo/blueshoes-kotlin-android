@@ -246,6 +246,10 @@ class MainActivity :
             .commit()
     }
 
+    fun updateToolbarTitleInFragment( title: String ){
+        toolbar.title = title
+    }
+
 
 
     override fun onBackPressed() {

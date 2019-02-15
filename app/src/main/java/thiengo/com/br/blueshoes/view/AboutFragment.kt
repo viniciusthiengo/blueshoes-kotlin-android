@@ -19,6 +19,7 @@ class AboutFragment :
 
     companion object {
         const val ID = 22568
+        const val TITLE = "Sobre"
     }
 
     override fun onCreateView(
@@ -128,5 +129,18 @@ class AboutFragment :
                 )
             )
         }
+    }
+
+
+    /*
+     * Método do ciclo de vida do fragmento somente
+     * utilizado aqui, como hackcode, para permitir
+     * a atualização do título da toolbar sem que
+     * seja lançado um erro em tempo de execução.
+     * */
+    override fun onResume() {
+        super.onResume()
+
+        (activity as MainActivity).updateToolbarTitleInFragment( TITLE )
     }
 }
