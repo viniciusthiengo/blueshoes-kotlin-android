@@ -19,7 +19,7 @@ class AboutFragment :
 
     companion object {
         const val ID = 22568
-        const val TITLE = "Sobre"
+        const val TITLE_ID = R.string.about_frag_title
     }
 
     override fun onCreateView(
@@ -141,6 +141,7 @@ class AboutFragment :
     override fun onResume() {
         super.onResume()
 
-        (activity as MainActivity).updateToolbarTitleInFragment( TITLE )
+        (activity as MainActivity)
+            .updateToolbarTitleInFragment( TITLE_ID )
     }
 }

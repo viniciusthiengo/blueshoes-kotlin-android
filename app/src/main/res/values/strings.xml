@@ -28,6 +28,8 @@
 
 
     <!-- AboutFragment -->
+    <string name="about_frag_title">Sobre a BlueShoes</string>
+
     <string name="about_frag_mission_title">Missão</string>
     <string name="about_frag_mission_desc">
         Inspirar e transformar a vida das pessoas com calçados que

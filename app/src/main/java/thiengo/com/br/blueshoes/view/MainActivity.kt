@@ -246,8 +246,8 @@ class MainActivity :
             .commit()
     }
 
-    fun updateToolbarTitleInFragment( title: String ){
-        toolbar.title = title
+    fun updateToolbarTitleInFragment( titleStringId: Int ){
+        toolbar.title = getString( titleStringId )
     }
 
 
