@@ -39,7 +39,7 @@ class AboutFragment :
     /*
      * Para que não tenhamos problemas de Views ainda não
      * carregadas em tela para possível acesso em código
-     * dinâmino, as Views do layout de AboutFragment estão
+     * dinâmico, as Views do layout de AboutFragment estão
      * sendo acessadas somente em método posterior ao
      * método onCreateView(), no caso o método onActivityCreated(),
      * digo, Views sendo acessadas via sintaxe
