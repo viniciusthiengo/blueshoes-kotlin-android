@@ -27,12 +27,14 @@ import thiengo.com.br.blueshoes.util.NavMenuItemPredicate
 class MainActivity :
     AppCompatActivity() {
 
-    /*
-     * Para debug em LogCat durante o desenvolvimento do
-     * projeto.
-     * */
+
     companion object {
+        /*
+         * Para debug em LogCat durante o desenvolvimento do
+         * projeto.
+         * */
         const val LOG = "log-bs"
+
         const val FRAGMENT_TAG = "frag-tag"
     }
 
