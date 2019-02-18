@@ -227,24 +227,23 @@ class MainActivity :
          * inicial.
          * */
         if( fragment == null ){
-            fragment = getFragment( AboutFragment.ID )
+            fragment = getFragment( R.id.item_about.toLong() )
         }
 
         replaceFragment( fragment )
     }
 
-    private fun getFragment( fragId: Int ): Fragment{
+    private fun getFragment( fragId: Long ): Fragment{
 
         return when( fragId ){
-            AboutFragment.ID -> AboutFragment()
+            R.id.item_about.toLong() -> AboutFragment()
             else -> AboutFragment()
         }
     }
 
     private fun replaceFragment( fragment: Fragment ){
-        val transaction = supportFragmentManager.beginTransaction()
-
-        transaction
+        supportFragmentManager
+            .beginTransaction()
             .replace(
                 R.id.fl_fragment_container,
                 fragment,
@@ -339,11 +338,7 @@ class MainActivity :
              * TODO: Mudança de Fragment
              * */
 
-            val fragment = when( key ){
-                R.id.item_about.toLong() -> getFragment( AboutFragment.ID )
-                else -> getFragment( AboutFragment.ID )
-            }
-
+            val fragment = getFragment( key )
             replaceFragment( fragment )
 
 

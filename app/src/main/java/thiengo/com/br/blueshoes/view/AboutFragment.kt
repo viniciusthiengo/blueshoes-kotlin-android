@@ -17,11 +17,6 @@ class AboutFragment :
     Fragment(),
     View.OnClickListener {
 
-    companion object {
-        const val ID = 22568
-        const val TITLE_ID = R.string.about_frag_title
-    }
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -119,7 +114,7 @@ class AboutFragment :
         intent.setPackage( appPackage )
 
         try{
-            startActivity( intent )
+            activity!!.startActivity( intent )
         }
         catch( e: ActivityNotFoundException ){
             /*
@@ -127,7 +122,7 @@ class AboutFragment :
              * social acionada, então abra a página
              * no navegador padrão do aparelho, Web.
              * */
-            startActivity(
+            activity!!.startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
                     Uri.parse( webAddress )
@@ -147,6 +142,6 @@ class AboutFragment :
         super.onResume()
 
         (activity as MainActivity)
-            .updateToolbarTitleInFragment( TITLE_ID )
+            .updateToolbarTitleInFragment( R.string.about_frag_title )
     }
 }
