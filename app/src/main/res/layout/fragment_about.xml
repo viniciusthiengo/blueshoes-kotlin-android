@@ -13,7 +13,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tv_mission_title"
+            android:id="@+id/tv_phones_title"
             style="@style/TextViewContentTitle"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -21,9 +21,9 @@
             android:text="@string/about_frag_mission_title"/>
 
         <TextView
-            android:id="@+id/tv_mission_desc"
+            android:id="@+id/tv_phone_cities"
             style="@style/AboutFragTextViewContent"
-            android:layout_below="@+id/tv_mission_title"
+            android:layout_below="@+id/tv_phones_title"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="@string/about_frag_mission_desc"/>
@@ -31,7 +31,7 @@
         <TextView
             android:id="@+id/tv_vision_title"
             style="@style/TextViewContentTitle"
-            android:layout_below="@+id/tv_mission_desc"
+            android:layout_below="@+id/tv_phone_cities"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="@string/about_frag_vision_title"/>
@@ -166,7 +166,7 @@
             android:text="@string/label_linkedin"/>
 
         <TextView
-            android:id="@+id/tv_linkedin_info"
+            android:id="@+id/tv_phone_cities_info"
             style="@style/TextViewOrangeInfo"
             android:layout_alignTop="@+id/tv_linkedin"
             android:layout_toEndOf="@+id/tv_linkedin"

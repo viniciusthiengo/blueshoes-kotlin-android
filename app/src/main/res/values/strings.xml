@@ -76,4 +76,56 @@
 
     <string name="ic_cnpj_desc">Ícone do CNPJ BlueShoes</string>
     <string name="label_cnpj">CNPJ 25.002.230/0001&#8211;10</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <!-- ContactFragment -->
+    <string name="contact_frag_title">Contato</string>
+
+    <string name="ic_info_desc">Ícone de informação.</string>
+    <string name="contact_frag_info">
+        Em caso de problemas com a mercadoria ou em caso de trocas,
+        seja bem específico e também adicione o número do pedido.
+    </string>
+
+    <string name="contact_frag_phones_title">Telefones</string>
+    <string name="ic_phone_desc">Ícone de telefone.</string>
+    <string name="contact_frag_phone_cities">(27) 3333&#8211;1111</string>
+    <string name="contact_frag_phone_cities_info">
+        Espírito Santo e demais capitais no Brasil.
+    </string>
+    <string name="contact_frag_phone_other_regions">0800 111 0000</string>
+    <string name="contact_frag_phone_other_regions_info">
+        Demais regiões no Brasil.
+    </string>
+
+    <string name="contact_frag_emails_title">E-mails</string>
+    <string name="ic_email_desc">Ícone de e-mail.</string>
+    <string name="contact_frag_email_orders">pedidos@blueshoes.com.br</string>
+    <string name="contact_frag_email_orders_info">
+        Problemas com entrega ou defeito.
+    </string>
+    <string name="contact_frag_email_attendance">atendimento@blueshoes.com.br</string>
+    <string name="contact_frag_email_attendance_info">
+        Demais problemas / dúvidas.
+    </string>
+    <string name="info_email_app_install">
+        Instale algum aplicativo de e-mail.
+    </string>
+
+    <string name="contact_frag_address_title">Endereço</string>
+    <string name="ic_map_marker_desc">Ícone marcador de localização em map.</string>
+    <string name="contact_frag_address">
+        Rua Vergueiro, 943 - Serra - CEP 29504-001 - Espírito Santo - ES.
+    </string>
+    <string name="contact_frag_address_formatted_to_google_maps">
+        Avenida dos Sabias, Serra, Espírito Santo, Brasil.
+    </string>
+
+    <string name="info_google_maps_install">
+        Instale o aplicativo do Google Maps.
+    </string>
 </resources>
