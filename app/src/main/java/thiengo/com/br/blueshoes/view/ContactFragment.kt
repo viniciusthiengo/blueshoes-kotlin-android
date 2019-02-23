@@ -19,7 +19,6 @@ class ContactFragment :
     Fragment(),
     View.OnClickListener {
 
-
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -80,7 +79,12 @@ class ContactFragment :
         }
     }
 
-    private fun phoneCallIntent(phoneNumber: String ){
+    private fun phoneCallIntent( phoneNumber: String ){
+        /*
+         * O replace() está sendo utilizado para remover
+         * caracteres que não são aceitos no Intent de
+         * data "tel:"
+         * */
         val phone = phoneNumber.replace( "(\\s|\\)|\\()", "" )
         val intent = Intent( Intent.ACTION_DIAL )
 
@@ -92,7 +96,7 @@ class ContactFragment :
          * telefonema não esteja presente no smartphone ou tablet
          * Android.
          * */
-        startActivity( intent )
+        activity!!.startActivity( intent )
     }
 
     private fun mailToIntent( emailAddress: String ){
@@ -105,14 +109,14 @@ class ContactFragment :
         )
 
         try{
-            startActivity( intent )
+            activity!!.startActivity( intent )
         }
         catch ( e: ActivityNotFoundException ){
             Toast
                 .makeText(
                     activity,
                     getString(R.string.info_email_app_install),
-                    Toast.LENGTH_SHORT
+                    Toast.LENGTH_LONG
                 )
                 .show()
         }
@@ -128,14 +132,14 @@ class ContactFragment :
         intent.setPackage( "com.google.android.apps.maps" )
 
         if( intent.resolveActivity( activity!!.packageManager ) != null ){
-            startActivity( intent )
+            activity!!.startActivity( intent )
         }
         else{
             Toast
                 .makeText(
                     activity,
                     getString(R.string.info_google_maps_install),
-                    Toast.LENGTH_SHORT
+                    Toast.LENGTH_LONG
                 )
                 .show()
         }

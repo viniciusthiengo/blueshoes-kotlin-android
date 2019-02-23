@@ -227,7 +227,7 @@ class MainActivity :
          * inicial.
          * */
         if( fragment == null ){
-            fragment = getFragment( R.id.item_contact.toLong() )
+            fragment = getFragment( R.id.item_about.toLong() )
         }
 
         replaceFragment( fragment )

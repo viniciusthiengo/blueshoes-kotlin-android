@@ -77,9 +77,6 @@
     <string name="ic_cnpj_desc">Ícone do CNPJ BlueShoes</string>
     <string name="label_cnpj">CNPJ 25.002.230/0001&#8211;10</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
 
     <!-- ContactFragment -->
@@ -122,7 +119,7 @@
         Rua Vergueiro, 943 - Serra - CEP 29504-001 - Espírito Santo - ES.
     </string>
     <string name="contact_frag_address_formatted_to_google_maps">
-        Avenida dos Sabias, Serra, Espírito Santo, Brasil.
+        Rua Vergueiro, Serra, Espírito Santo, Brasil.
     </string>
 
     <string name="info_google_maps_install">
