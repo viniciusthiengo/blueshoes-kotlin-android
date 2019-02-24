@@ -109,6 +109,9 @@
     <string name="contact_frag_email_attendance_info">
         Demais problemas / dúvidas.
     </string>
+    <string name="chooser_email_text">
+        Enviar e-mail com:
+    </string>
     <string name="info_email_app_install">
         Instale algum aplicativo de e-mail.
     </string>

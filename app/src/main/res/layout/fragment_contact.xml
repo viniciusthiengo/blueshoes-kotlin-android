@@ -14,7 +14,7 @@
 
         <!-- Informação principal -->
         <LinearLayout
-            android:id="@+id/ll_info_conatiner"
+            android:id="@+id/ll_info_container"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -47,7 +47,7 @@
         <TextView
             android:id="@+id/tv_phones_title"
             style="@style/TextViewContentTitle"
-            android:layout_below="@+id/ll_info_conatiner"
+            android:layout_below="@+id/ll_info_container"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="18dp"

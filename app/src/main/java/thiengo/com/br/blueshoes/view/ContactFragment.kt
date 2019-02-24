@@ -109,7 +109,12 @@ class ContactFragment :
         )
 
         try{
-            activity!!.startActivity( intent )
+            val intentChooser = Intent
+                .createChooser(
+                    intent,
+                    getString( R.string.chooser_email_text )
+                )
+            activity!!.startActivity( intentChooser )
         }
         catch ( e: ActivityNotFoundException ){
             Toast
