@@ -79,16 +79,16 @@ class ContactFragment :
         }
     }
 
-    private fun phoneCallIntent( phoneNumber: String ){
+    private fun phoneCallIntent( number: String ){
         /*
          * O replace() está sendo utilizado para remover
          * caracteres que não são aceitos no Intent de
          * data "tel:"
          * */
-        val phone = phoneNumber.replace( "(\\s|\\)|\\()", "" )
+        val phoneNumber = number.replace( "(\\s|\\)|\\(|-)", "" )
         val intent = Intent( Intent.ACTION_DIAL )
 
-        intent.data = Uri.parse( "tel:$phone" )
+        intent.data = Uri.parse( "tel:$phoneNumber" )
 
         /*
          * Aqui não há necessidade de um try{}catch{} para o
