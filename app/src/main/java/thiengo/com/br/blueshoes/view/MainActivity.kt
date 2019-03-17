@@ -1,5 +1,6 @@
 package thiengo.com.br.blueshoes.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
@@ -41,7 +42,7 @@ class MainActivity :
     val user = User(
         "Thiengo Vinícius",
         R.drawable.user,
-        true
+        false
     )
 
     lateinit var navMenuItems : List<NavMenuItem>
@@ -227,7 +228,7 @@ class MainActivity :
          * inicial.
          * */
         if( fragment == null ){
-            fragment = getFragment( R.id.item_privacy_policy.toLong() )
+            fragment = getFragment( R.id.item_about.toLong() )
         }
 
         replaceFragment( fragment )
@@ -289,6 +290,11 @@ class MainActivity :
             R.id.action_settings -> return true
             else -> return super.onOptionsItemSelected( item )
         }
+    }
+
+    fun callLoginActivity( view: View ){
+        val intent = Intent( this, LoginActivity::class.java )
+        startActivity( intent )
     }
 
 

@@ -31,16 +31,16 @@
         Para o correto enquadramento do AppBarLayout.
     -->
     <style
-        name="AppTheme.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.ActionBar"/>
+            name="AppTheme.AppBarOverlay"
+            parent="ThemeOverlay.AppCompat.ActionBar"/>
 
     <!--
         Utilizado para a correta apresentação de menus de pop-up
         em barra de topo.
     -->
     <style
-        name="AppTheme.PopupOverlay"
-        parent="ThemeOverlay.AppCompat.Light"/>
+            name="AppTheme.PopupOverlay"
+            parent="ThemeOverlay.AppCompat.Light"/>
 
     <style name="TextViewContentTitle">
         <item name="android:layout_width">match_parent</item>
@@ -93,5 +93,9 @@
         <item name="android:textSize">12sp</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ProgressBarGreyProxy">
+        <item name="colorAccent">@color/colorPrimaryDark</item>
     </style>
 </resources>

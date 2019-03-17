@@ -22,7 +22,8 @@
         android:background="@drawable/bt_nav_header_login_bg"
         android:textColor="@android:color/white"
         android:textAllCaps="false"
-        android:text="@string/tx_login"/>
+        android:text="@string/tx_login"
+        android:onClick="callLoginActivity"/>
 
     <TextView
         android:id="@+id/tv_or"
