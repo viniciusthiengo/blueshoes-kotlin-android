@@ -17,7 +17,15 @@
 
     <color name="colorLightYellowBox">#BBFFF150</color>
 
+    <!--
+        Cor de background para EditText em foco.
+    -->
     <color name="colorFieldFocused">#F2F9FF</color>
 
+    <!--
+        Cor de background da tela de proxy, quando
+        os dados de formulário estão sendo enviados
+        ao back-end Web.
+    -->
     <color name="colorBackgroundProxy">#55FFFFFF</color>
 </resources>

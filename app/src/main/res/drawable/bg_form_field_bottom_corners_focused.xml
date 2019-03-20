@@ -21,6 +21,6 @@
         retangular.
     -->
     <corners
-            android:bottomLeftRadius="5dp"
-            android:bottomRightRadius="5dp" />
+        android:bottomLeftRadius="5dp"
+        android:bottomRightRadius="5dp" />
 </shape>

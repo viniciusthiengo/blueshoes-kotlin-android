@@ -156,11 +156,7 @@ class LoginActivity :
         imm.hideSoftInputFromWindow( view.windowToken, 0 )
     }
 
-    fun sendLogin( view: View ){
-        login()
-    }
-
-    private fun login(){
+    fun login( view: View? = null ){
         blockFields( true )
         isSignInGoing( true )
         showProxy( true )
@@ -174,6 +170,7 @@ class LoginActivity :
     private fun blockFields( status: Boolean ){
         et_email.isEnabled = !status
         et_password.isEnabled = !status
+        bt_login.isEnabled = !status
     }
 
     /*
@@ -202,6 +199,10 @@ class LoginActivity :
     private fun backEndFakeDelay(){
         Thread{
             kotlin.run {
+                /*
+                 * Simulando um delay de latência de
+                 * 1 segundo.
+                 * */
                 SystemClock.sleep( 1000 )
 
                 runOnUiThread {

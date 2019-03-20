@@ -145,14 +145,22 @@
     <string name="invalid_password">
         Mínimo de 6 caracteres.
     </string>
-
     <string name="hint_email">E-mail</string>
     <string name="hint_password">Senha</string>
-    <string name="forgot_my_password">Esqueci minha senha</string>
+    <string name="forgot_my_password">
+        Esqueci minha senha
+    </string>
     <string name="sign_in">Entrar</string>
     <string name="sign_in_going">Entrando&#8230;</string>
     <string name="or">ou</string>
-    <string name="sign_up">Criar minha conta</string>
-    <string name="privacy_policy">Políticas de privacidade</string>
-    <string name="invalid_login">Dados de login inválidos.</string>
+    <string name="sign_up">
+        Criar minha conta
+    </string>
+    <string name="privacy_policy">
+        Políticas de privacidade
+    </string>
+    <string name="invalid_login">
+        Dados de login inválidos.
+    </string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
