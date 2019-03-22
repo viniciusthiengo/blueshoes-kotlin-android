@@ -14,10 +14,9 @@ import android.text.style.RelativeSizeSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_policy_privacy.*
+import kotlinx.android.synthetic.main.fragment_privacy_policy.*
 import android.text.style.StyleSpan
 import android.text.style.URLSpan
-import android.util.Log
 
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.util.CustomTypefaceSpan
@@ -33,7 +32,7 @@ class PrivacyPolicyFragment : Fragment() {
 
         return inflater
             .inflate(
-                R.layout.fragment_policy_privacy,
+                R.layout.fragment_privacy_policy,
                 container,
                 false
             )
