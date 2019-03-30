@@ -12,16 +12,12 @@
 
     <Button
         android:id="@+id/bt_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ButtonForm"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/bt_nav_header_login_bg"
-        android:textColor="@android:color/white"
-        android:textAllCaps="false"
         android:text="@string/tx_login"
         android:onClick="callLoginActivity"/>
 

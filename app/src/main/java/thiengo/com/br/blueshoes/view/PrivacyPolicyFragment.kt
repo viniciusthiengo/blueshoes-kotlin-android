@@ -6,18 +6,19 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
-import android.text.*
 import android.text.Annotation
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannedString
 import android.text.method.LinkMovementMethod
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+import android.text.style.URLSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_privacy_policy.*
-import android.text.style.StyleSpan
-import android.text.style.URLSpan
-
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.util.CustomTypefaceSpan
 

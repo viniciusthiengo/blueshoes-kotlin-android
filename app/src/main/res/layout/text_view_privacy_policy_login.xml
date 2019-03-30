@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:showIn="@layout/content_login"
+    tools:showIn="@layout/content_login_old"
     tools:context=".view.LoginActivity"
     android:id="@+id/tv_privacy_policy"
     style="@style/TextViewLink"
@@ -11,4 +11,5 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    android:text="@string/privacy_policy"/>
+    android:text="@string/privacy_policy"
+    android:onClick="callPrivacyPolicyFragment"/>
