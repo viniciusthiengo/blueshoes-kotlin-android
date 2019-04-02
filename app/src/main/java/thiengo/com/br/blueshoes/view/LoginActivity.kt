@@ -50,9 +50,11 @@ class LoginActivity :
          * Colocando configuração de validação de campo de email
          * para enquanto o usuário informa o conteúdo deste campo.
          * */
+
+        et_email.text.toString()
         et_email.validate(
             {
-                et_email.text.toString().isValidEmail()
+                it.isValidEmail()
             },
             getString( R.string.invalid_email )
         )
@@ -63,7 +65,7 @@ class LoginActivity :
          * */
         et_password.validate(
             {
-                et_password.text.toString().isValidPassword()
+                it.isValidPassword()
             },
             getString( R.string.invalid_password )
         )
