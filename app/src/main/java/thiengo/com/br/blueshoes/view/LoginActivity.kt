@@ -50,8 +50,6 @@ class LoginActivity :
          * Colocando configuração de validação de campo de email
          * para enquanto o usuário informa o conteúdo deste campo.
          * */
-
-        et_email.text.toString()
         et_email.validate(
             {
                 it.isValidEmail()
@@ -213,13 +211,12 @@ class LoginActivity :
 
     /* Listeners de clique */
         fun callForgotPasswordActivity( view: View ){
-            Toast
-                .makeText(
-                    this,
-                    "TODO: callForgotPasswordActivity()",
-                    Toast.LENGTH_SHORT
-                )
-                .show()
+            val intent = Intent(
+                this,
+                ForgotPasswordActivity::class.java
+            )
+
+            startActivity( intent )
         }
 
         fun callSignUpActivity( view: View ){

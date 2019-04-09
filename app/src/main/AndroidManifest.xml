@@ -26,5 +26,10 @@
             android:name=".view.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".view.ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Drawable utilizado quando a View alvo está com
+        foco.
+    -->
+    <item
+        android:state_focused="true"
+        android:drawable="@drawable/bg_form_field_corners_focused" />
+
+    <!--
+        Drawable utilizado quando a View alvo não está
+        com foco.
+    -->
+    <item
+        android:drawable="@drawable/bg_form_field_corners" />
+</selector>
