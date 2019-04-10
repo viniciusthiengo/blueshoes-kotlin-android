@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_contact.*
+import kotlinx.android.synthetic.main.info_block.*
 import thiengo.com.br.blueshoes.R
 
 
@@ -47,6 +48,8 @@ class ContactFragment :
 
         iv_address.setOnClickListener( this )
         tv_address.setOnClickListener( this )
+
+        tv_info_block.text = getString( R.string.contact_frag_info )
     }
 
     override fun onClick(v: View) {

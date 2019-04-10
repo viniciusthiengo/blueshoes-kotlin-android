@@ -2,12 +2,9 @@ package thiengo.com.br.blueshoes.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.SystemClock
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
-import android.view.KeyEvent
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.ScreenUtils
@@ -22,7 +19,6 @@ import thiengo.com.br.blueshoes.util.validate
 
 class LoginActivity :
     FormActivity(),
-    TextView.OnEditorActionListener,
     KeyboardUtils.OnSoftInputChangedListener {
 
     override fun onCreate( savedInstanceState: Bundle? ) {
@@ -76,25 +72,14 @@ class LoginActivity :
         super.onDestroy()
     }
 
-    /*
-     * Caso o usuário toque no botão "Done" do teclado virtual
-     * ao invés de tocar no botão "Entrar". Mesmo assim temos
-     * de processar o formulário.
-     * */
-    override fun onEditorAction(
-        view: TextView,
-        actionId: Int,
-        event: KeyEvent? ): Boolean {
-
-        mainAction()
-        return false
-    }
-
     override fun mainAction( view: View? ){
         blockFields( true )
         isMainButtonSending( true )
         showProxy( true )
-        backEndFakeDelay()
+        backEndFakeDelay(
+            false,
+            getString( R.string.invalid_login )
+        )
     }
 
     override fun blockFields( status: Boolean ){
@@ -109,30 +94,6 @@ class LoginActivity :
                 getString(R.string.sign_in_going)
             else
                 getString(R.string.sign_in)
-    }
-
-    private fun backEndFakeDelay(){
-        Thread{
-            kotlin.run {
-                /*
-                 * Simulando um delay de latência de
-                 * 1 segundo.
-                 * */
-                SystemClock.sleep( 1000 )
-
-                runOnUiThread {
-                    blockFields( false )
-                    isMainButtonSending( false )
-                    showProxy( false )
-
-                    snackBarFeedback(
-                        fl_form_container,
-                        false,
-                        getString( R.string.invalid_login )
-                    )
-                }
-            }
-        }.start()
     }
 
     override fun onSoftInputChanged( height: Int ) {

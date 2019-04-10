@@ -1,20 +1,17 @@
 package thiengo.com.br.blueshoes.view
 
 import android.os.Bundle
-import android.os.SystemClock
-import android.view.KeyEvent
 import android.view.View
-import android.widget.TextView
 import kotlinx.android.synthetic.main.content_forgot_password.*
 import kotlinx.android.synthetic.main.content_form.*
+import kotlinx.android.synthetic.main.info_block.*
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.util.isValidEmail
 import thiengo.com.br.blueshoes.util.validate
 
 
 class ForgotPasswordActivity :
-    FormActivity(),
-    TextView.OnEditorActionListener {
+    FormActivity() {
 
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
@@ -41,27 +38,20 @@ class ForgotPasswordActivity :
         )
 
         et_email.setOnEditorActionListener( this )
-    }
 
-    /*
-     * Caso o usuário toque no botão "Done" do teclado virtual
-     * ao invés de tocar no botão "Entrar". Mesmo assim temos
-     * de processar o formulário.
-     * */
-    override fun onEditorAction(
-        view: TextView,
-        actionId: Int,
-        event: KeyEvent? ): Boolean {
 
-        mainAction()
-        return false
+        tv_info_block.text = getString( R.string.forgot_password_info )
     }
 
     override fun mainAction( view: View? ){
         blockFields( true )
         isMainButtonSending( true )
         showProxy( true )
-        backEndFakeDelay()
+
+        backEndFakeDelay(
+            false,
+            getString( R.string.invalid_login_email )
+        )
     }
 
     override fun blockFields( status: Boolean ){
@@ -69,35 +59,11 @@ class ForgotPasswordActivity :
         bt_recover_password.isEnabled = !status
     }
 
-    override fun isMainButtonSending(status: Boolean ){
+    override fun isMainButtonSending( status: Boolean ){
         bt_recover_password.text =
             if( status )
                 getString( R.string.recover_password_going )
             else
                 getString( R.string.recover_password )
-    }
-
-    private fun backEndFakeDelay(){
-        Thread{
-            kotlin.run {
-                /*
-                 * Simulando um delay de latência de
-                 * 1 segundo.
-                 * */
-                SystemClock.sleep( 1000 )
-
-                runOnUiThread {
-                    blockFields( false )
-                    isMainButtonSending( false )
-                    showProxy( false )
-
-                    snackBarFeedback(
-                        fl_form_container,
-                        false,
-                        getString( R.string.invalid_login )
-                    )
-                }
-            }
-        }.start()
     }
 }

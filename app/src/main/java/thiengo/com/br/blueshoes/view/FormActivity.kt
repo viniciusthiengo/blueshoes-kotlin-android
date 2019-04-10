@@ -3,6 +3,7 @@ package thiengo.com.br.blueshoes.view
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Bundle
+import android.os.SystemClock
 import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
@@ -10,24 +11,26 @@ import android.support.v7.app.AppCompatActivity
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ImageSpan
+import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import kotlinx.android.synthetic.main.app_bar.*
+import kotlinx.android.synthetic.main.content_form.*
 import kotlinx.android.synthetic.main.proxy_screen.*
 import thiengo.com.br.blueshoes.R
 
 
-abstract class FormActivity : AppCompatActivity() {
+abstract class FormActivity :
+    AppCompatActivity(),
+    TextView.OnEditorActionListener {
 
 
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
         setContentView( R.layout.activity_form )
         setSupportActionBar( toolbar )
-
-        //supportActionBar?.setDisplayHomeAsUpEnabled( true )
 
         /*
          * Para liberar o back button na barra de topo da
@@ -56,6 +59,20 @@ abstract class FormActivity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    /*
+     * Caso o usuário toque no botão "Done" do teclado virtual
+     * ao invés de tocar no botão "Entrar". Mesmo assim temos
+     * de processar o formulário.
+     * */
+    override fun onEditorAction(
+        view: TextView,
+        actionId: Int,
+        event: KeyEvent? ): Boolean {
+
+        mainAction()
+        return false
     }
 
     /*
@@ -170,4 +187,37 @@ abstract class FormActivity : AppCompatActivity() {
      * do envio de dados.
      * */
     abstract fun isMainButtonSending(status: Boolean )
+
+
+    /*
+     * Fake method - Somente para testes temporários em atividades
+     * e fragmentos que contêm formulários.
+     * */
+    protected fun backEndFakeDelay(
+        statusAction: Boolean,
+        feedbackMessage: String
+    ){
+
+        Thread{
+            kotlin.run {
+                /*
+                 * Simulando um delay de latência de
+                 * 1 segundo.
+                 * */
+                SystemClock.sleep( 1000 )
+
+                runOnUiThread {
+                    blockFields( false )
+                    isMainButtonSending( false )
+                    showProxy( false )
+
+                    snackBarFeedback(
+                        fl_form_container,
+                        statusAction,
+                        feedbackMessage
+                    )
+                }
+            }
+        }.start()
+    }
 }

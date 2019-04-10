@@ -174,9 +174,10 @@
         o e-mail para prosseguir com o passo a passo de recuperação
         de acesso.
     </string>
-
     <string name="hint_login_email">E-mail de login</string>
-
     <string name="recover_password">Recuperar senha</string>
     <string name="recover_password_going">Enviando&#8230;</string>
+    <string name="invalid_login_email">
+        E-mail não encontrado em nossa base de dados.
+    </string>
 </resources>

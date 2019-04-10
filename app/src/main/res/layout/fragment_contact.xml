@@ -13,35 +13,14 @@
         android:padding="16dp">
 
         <!-- Informação principal -->
-        <LinearLayout
-            android:id="@+id/ll_info_container"
+        <include
+            layout="@layout/info_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="38dp"
-            android:background="@color/colorLightYellowBox"
-            android:padding="12dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/iv_info"
-                style="@style/ImageViewLink"
-                android:layout_marginBottom="0dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginEnd="12dp"
-                android:tint="@color/colorText"
-                android:contentDescription="@string/ic_info_desc"
-                android:src="@drawable/ic_information_black_18dp"/>
-            <TextView
-                android:id="@+id/tv_cnpj"
-                style="@style/TextViewLink"
-                android:textColor="@color/colorText"
-                android:text="@string/contact_frag_info"/>
-        </LinearLayout>
-
-
+            android:layout_marginBottom="38dp"/>
 
         <!-- Telefones -->
         <TextView
