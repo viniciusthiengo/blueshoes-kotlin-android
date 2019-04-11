@@ -112,6 +112,8 @@
     <style name="ButtonForm">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">38dp</item>
+        <item name="android:paddingRight">38dp</item>
         <item name="android:background">@drawable/bt_nav_header_login_bg</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textAllCaps">false</item>
