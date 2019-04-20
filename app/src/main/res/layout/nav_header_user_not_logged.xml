@@ -15,6 +15,7 @@
         style="@style/ButtonForm"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
+        android:layout_marginTop="0dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"

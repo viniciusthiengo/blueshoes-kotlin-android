@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
 import android.view.View
-import android.widget.Toast
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.ScreenUtils
 import kotlinx.android.synthetic.main.content_form.*
-import kotlinx.android.synthetic.main.content_login.*
+import kotlinx.android.synthetic.main.content_sign_up.*
 import kotlinx.android.synthetic.main.text_view_privacy_policy_login.*
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.util.isValidEmail
@@ -17,7 +16,7 @@ import thiengo.com.br.blueshoes.util.isValidPassword
 import thiengo.com.br.blueshoes.util.validate
 
 
-open class LoginActivity :
+class SignUpActivity :
     FormActivity(),
     KeyboardUtils.OnSoftInputChangedListener {
 
@@ -30,7 +29,7 @@ open class LoginActivity :
          * */
         View.inflate(
             this,
-            R.layout.content_login,
+            R.layout.content_sign_up,
             fl_form
         )
 
@@ -64,7 +63,27 @@ open class LoginActivity :
             getString( R.string.invalid_password )
         )
 
-        et_password.setOnEditorActionListener( this )
+        /*
+         * Colocando configuração de validação de campo de
+         * confirmação de senha para enquanto o usuário informa o
+         * conteúdo deste campo.
+         * */
+        et_confirm_password.validate(
+            {
+
+                /*
+                 * O toString() em et_password.text.toString() é
+                 * necessário, caso contrário a validação falha
+                 * mesmo quando é para ser ok.
+                 * */
+                (et_password.text.isNotEmpty()
+                    && it.equals( et_password.text.toString() ))
+                || et_password.text.isEmpty()
+            },
+            getString( R.string.invalid_confirmed_password )
+        )
+
+        et_confirm_password.setOnEditorActionListener( this )
     }
 
     override fun onDestroy() {
@@ -78,31 +97,29 @@ open class LoginActivity :
         showProxy( true )
         backEndFakeDelay(
             false,
-            getString( R.string.invalid_login )
+            getString( R.string.invalid_sign_up_email )
         )
     }
 
     override fun blockFields( status: Boolean ){
         et_email.isEnabled = !status
         et_password.isEnabled = !status
-        bt_login.isEnabled = !status
+        et_confirm_password.isEnabled = !status
+        bt_sign_up.isEnabled = !status
     }
 
     override fun isMainButtonSending(status: Boolean ){
-        bt_login.text =
+        bt_sign_up.text =
             if( status )
-                getString(R.string.sign_in_going)
+                getString( R.string.sign_up_going )
             else
-                getString(R.string.sign_in)
+                getString( R.string.sign_up )
     }
 
     override fun onSoftInputChanged( height: Int ) {
-
-        if( ScreenUtils.isPortrait() ){
-            changePrivacyPolicyConstraints(
-                KeyboardUtils.isSoftInputVisible( this )
-            )
-        }
+        changePrivacyPolicyConstraints(
+            KeyboardUtils.isSoftInputVisible( this )
+        )
     }
 
     private fun changePrivacyPolicyConstraints(
@@ -136,7 +153,7 @@ open class LoginActivity :
             ConstraintLayout.LayoutParams.PARENT_ID
         )
 
-        if( isKeyBoardOpened ){
+        if( isKeyBoardOpened || ScreenUtils.isLandscape() ){
             /*
              * Se o teclado virtual estiver aberto, então
              * mude a configuração da View alvo
@@ -146,7 +163,7 @@ open class LoginActivity :
             constraintSet.connect(
                 privacyId,
                 ConstraintLayout.LayoutParams.TOP,
-                tv_sign_up.id,
+                bt_sign_up.id,
                 ConstraintLayout.LayoutParams.BOTTOM,
                 (12 * ScreenUtils.getScreenDensity()).toInt()
             )
@@ -171,22 +188,8 @@ open class LoginActivity :
 
 
     /* Listeners de clique */
-        fun callForgotPasswordActivity( view: View ){
-            val intent = Intent(
-                this,
-                ForgotPasswordActivity::class.java
-            )
-
-            startActivity( intent )
-        }
-
-        fun callSignUpActivity( view: View ){
-            val intent = Intent(
-                this,
-                SignUpActivity::class.java
-            )
-
-            startActivity( intent )
+        fun callLoginActivity( view: View ){
+            finish()
         }
 
         fun callPrivacyPolicyFragment( view: View ){

@@ -153,7 +153,7 @@
     <string name="sign_in">Entrar</string>
     <string name="sign_in_going">Entrando&#8230;</string>
     <string name="or">ou</string>
-    <string name="sign_up">
+    <string name="create_my_account">
         Criar minha conta
     </string>
     <string name="privacy_policy">
@@ -179,5 +179,23 @@
     <string name="recover_password_going">Enviando&#8230;</string>
     <string name="invalid_login_email">
         E-mail não encontrado em nossa base de dados.
+    </string>
+
+
+    <!-- SignUpActivity -->
+    <string name="title_activity_sign_up">
+        Cadastro
+    </string>
+
+    <string name="hint_email_to_login">E-mail (para login)</string>
+    <string name="hint_confirm_password">Confirmar senha</string>
+    <string name="do_login">Realizar login</string>
+    <string name="sign_up">Cadastrar</string>
+    <string name="sign_up_going">Cadastrando&#8230;</string>
+    <string name="invalid_sign_up_email">
+        E-mail já cadastrado.
+    </string>
+    <string name="invalid_confirmed_password">
+        Confirme a senha informada no campo acima.
     </string>
 </resources>
