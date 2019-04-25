@@ -47,7 +47,19 @@ abstract class FormActivity :
          * layout.
          * */
         window.setBackgroundDrawableResource( R.drawable.bg_activity )
+
+        /*
+         * Colocando a View de um arquivo XML como View filha
+         * do item indicado no terceiro argumento.
+         * */
+        View.inflate(
+            this,
+            getLayoutResourceID(),
+            fl_form
+        )
     }
+
+    abstract fun getLayoutResourceID() : Int
 
     /*
      * Para permitir que o back button tenha a ação de volta para
@@ -170,11 +182,22 @@ abstract class FormActivity :
     }
 
     /*
+     * Método template.
      * Responsável por conter o algoritmo de envio / validação
      * de dados. Algoritmo vinculado ao menos ao principal
      * botão em tela.
      * */
-    abstract fun mainAction( view: View? = null )
+    fun mainAction( view: View? = null ){
+        blockFields( true )
+        isMainButtonSending( true )
+        showProxy( true )
+        backEndFakeDelay()
+    }
+
+    /*
+     * Método único.
+     * */
+    abstract fun backEndFakeDelay() : Unit
 
     /*
      * Necessário para que os campos de formulário não possam
