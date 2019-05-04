@@ -36,5 +36,10 @@
             android:name=".view.SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".view.AccountSettingsActivity"
+            android:label="@string/title_activity_account_settings"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

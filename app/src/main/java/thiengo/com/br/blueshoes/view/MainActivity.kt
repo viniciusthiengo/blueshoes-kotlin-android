@@ -43,13 +43,14 @@ class MainActivity :
     val user = User(
         "Thiengo Vinícius",
         R.drawable.user,
-        false
+        true
     )
 
     lateinit var navMenuItems : List<NavMenuItem>
     lateinit var selectNavMenuItems: SelectionTracker<Long>
     lateinit var navMenuItemsLogged : List<NavMenuItem>
     lateinit var selectNavMenuItemsLogged: SelectionTracker<Long>
+    lateinit var navMenu: NavMenuItemsDataBase
 
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
@@ -89,7 +90,7 @@ class MainActivity :
      * */
     private fun initNavMenu( savedInstanceState: Bundle? ){
 
-        val navMenu = NavMenuItemsDataBase( this )
+        navMenu = NavMenuItemsDataBase( this )
         navMenuItems = navMenu.items
         navMenuItemsLogged = navMenu.itemsLogged
 
@@ -320,7 +321,6 @@ class MainActivity :
     }
 
 
-
     inner class SelectObserverNavMenuItems(
         val callbackRemoveSelection: ()->Unit
     ) :
@@ -353,25 +353,119 @@ class MainActivity :
             }
 
             /*
-             * Para garantir que somente um item de lista se
-             * manterá selecionado, é preciso acessar o objeto
-             * de seleção da lista de itens de usuário conectado
-             * para então remover qualquer possível seleção
-             * ainda presente nela. Sempre haverá somente um
-             * item selecionado, mas infelizmente o método
-             * clearSelection() não estava respondendo como
-             * esperado, por isso a estratégia a seguir.
+             * Se o item de menu selecionado for um que aciona
+             * uma atividade, então a lógica de negócio difere
+             * de quando é o acionamento de um fragmento.
              * */
-            callbackRemoveSelection()
+            if( isActivityCallInMenu( key ) ) {
+                itemCallActivity( key, callbackRemoveSelection )
+            }
+            else {
+                itemCallFragment( key, callbackRemoveSelection )
+            }
+        }
+    }
+
+    /*
+     * Alguns itens do menu gaveta de usuário conectado acionam
+     * a abertura de uma atividade e não a abertura de um novo
+     * fragmento, dessa forma o método abaixo será útil em
+     * lógicas de negócio para informar quais são os itens que
+     * acionam atividades.
+     * */
+    fun isActivityCallInMenu( key: Long )
+        = when( key ){
+            R.id.item_settings.toLong() -> true
+            else -> false
+        }
+
+    private fun itemCallActivity(
+        key: Long,
+        callbackRemoveSelection: ()->Unit
+    ){
+
+        callbackRemoveSelection()
+
+        lateinit var intent : Intent
+
+        when( key ){
+            R.id.item_settings.toLong() -> {
+                intent = Intent(
+                    this,
+                    AccountSettingsActivity::class.java
+                )
+                intent.putExtra( User.KEY, user )
+            }
+        }
+
+        navMenu.saveIsActivityItemFired(
+            this,
+            true
+        )
+
+        startActivity( intent )
+    }
+
+    private fun itemCallFragment(
+        key: Long,
+        callbackRemoveSelection: ()->Unit
+    ){
+        /*
+         * Para garantir que somente um item de lista se
+         * manterá selecionado, é preciso acessar o objeto
+         * de seleção da lista de itens de usuário conectado
+         * para então remover qualquer possível seleção
+         * ainda presente nela. Sempre haverá somente um
+         * item selecionado, mas infelizmente o método
+         * clearSelection() não estava respondendo como
+         * esperado, por isso a estratégia a seguir.
+         * */
+        callbackRemoveSelection()
+
+        navMenu.saveLastSelectedItemFragmentID(
+            this,
+            key
+        )
+
+        if( !navMenu.wasActivityItemFired(this) ){
+            /*
+             * Somente permiti a real seleção de um fragmento e o
+             * fechamento do menu gaveta se o item de menu anterior
+             * selecionado não tiver sido um que aciona uma atividade.
+             * Caso contrário o fragmento já em tela deve continuar
+             * e o menu gaveta deve permanecer aberto.
+             * */
 
             val fragment = getFragment( key )
             replaceFragment( fragment )
-
 
             /*
              * Fechando o menu gaveta.
              * */
             drawer_layout.closeDrawer( GravityCompat.START )
+        }
+        else{
+            navMenu.saveIsActivityItemFired(
+                this,
+                false
+            )
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        /*
+         * Se o último item de menu gaveta selecionado foi um
+         * que aciona uma atividade, então temos de colocar a
+         * seleção de item correta em menu gaveta, item que
+         * estava selecionado antes do acionamento do item que
+         * invoca uma atividade.
+         * */
+        if( navMenu.wasActivityItemFired(this) ){
+            selectNavMenuItems.select(
+                navMenu.getLastSelectedItemFragmentID(this)
+            )
         }
     }
 }

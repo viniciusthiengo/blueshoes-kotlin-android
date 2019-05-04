@@ -198,4 +198,32 @@
     <string name="invalid_confirmed_password">
         Confirme a senha informada no campo acima.
     </string>
+
+
+    <!-- AccountSettingsActivity -->
+    <string name="title_activity_account_settings">
+        Configurações de conta
+    </string>
+
+    <string name="connected">Conectado:</string>
+
+    <string name="setting_item_profile">Perfil</string>
+    <string name="setting_item_profile_desc">
+        Para atualização de nome e foto de perfil.
+    </string>
+
+    <string name="setting_item_login">Conexão (login)</string>
+    <string name="setting_item_login_desc">
+        Para atualização de e-mail ou senha de acesso.
+    </string>
+
+    <string name="setting_item_address">Endereços</string>
+    <string name="setting_item_address_desc">
+        Para adição, remoção ou atualização de endereços de entrega.
+    </string>
+
+    <string name="setting_item_credit_cards">Cartões de crédito</string>
+    <string name="setting_item_credit_cards_desc">
+        Para adição e remoção de cartões de crédito.
+    </string>
 </resources>

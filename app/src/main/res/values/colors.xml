@@ -28,4 +28,8 @@
         ao back-end Web.
     -->
     <color name="colorBackgroundProxy">#55FFFFFF</color>
+
+    <color name="colorTextBox">#EEEEEE</color>
+    <color name="colorLightGrey">#AAAAAA</color>
+    <color name="colorLighterGrey">#EFEFEF</color>
 </resources>
