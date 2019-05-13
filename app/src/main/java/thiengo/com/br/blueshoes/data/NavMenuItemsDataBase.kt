@@ -1,7 +1,6 @@
 package thiengo.com.br.blueshoes.data
 
 import android.content.Context
-import android.content.SharedPreferences
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.NavMenuItem
 
@@ -91,8 +90,8 @@ class NavMenuItemsDataBase( context: Context ) {
 
     companion object{
         const val SP_NAME = "SP_NAV_MENU"
-        const val SP_ITEM_KEY = "item-id"
-        const val SP_ACTIVITY_ITEM_KEY = "is-activity-item-id"
+        const val SP_ITEM_ID_KEY = "item-id"
+        const val SP_IS_ACTIVITY_KEY = "is-activity"
     }
 
     private fun getSP( context: Context )
@@ -107,26 +106,26 @@ class NavMenuItemsDataBase( context: Context ) {
      * */
     fun saveLastSelectedItemFragmentID( context: Context, itemID: Long ){
         val sp = getSP( context )
-        sp.edit().putLong(SP_ITEM_KEY, itemID).apply()
+        sp.edit().putLong( SP_ITEM_ID_KEY, itemID ).apply()
     }
 
     /*
      * Retorna o ID do último item de menu selecionado que
      * aciona um fragmento.
      * */
-    fun getLastSelectedItemFragmentID(context: Context ) : Long {
+    fun getLastSelectedItemFragmentID( context: Context ) : Long {
         val sp = getSP( context )
-        return sp.getLong( SP_ITEM_KEY, 0 )
+        return sp.getLong( SP_ITEM_ID_KEY, 0 )
     }
 
     /*
      * Salva se o último item de menu acionado foi ou não
      * um item que aciona uma atividade.
      * */
-    fun saveIsActivityItemFired(context: Context, isActivity: Boolean ){
+    fun saveIsActivityItemFired( context: Context, isActivity: Boolean ){
         val sp = getSP( context )
         sp.edit()
-            .putBoolean( SP_ACTIVITY_ITEM_KEY, isActivity )
+            .putBoolean( SP_IS_ACTIVITY_KEY, isActivity )
             .apply()
     }
 
@@ -134,8 +133,8 @@ class NavMenuItemsDataBase( context: Context ) {
      * Informa se o último item de menu acionado foi ou não
      * um item que aciona uma atividade.
      * */
-    fun wasActivityItemFired(context: Context ) : Boolean {
+    fun wasActivityItemFired( context: Context ) : Boolean {
         val sp = getSP( context )
-        return sp.getBoolean( SP_ACTIVITY_ITEM_KEY, false )
+        return sp.getBoolean( SP_IS_ACTIVITY_KEY, false )
     }
 }
