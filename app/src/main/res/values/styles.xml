@@ -42,6 +42,30 @@
             name="AppTheme.PopupOverlay"
             parent="ThemeOverlay.AppCompat.Light"/>
 
+    <!--
+        Para colocarmos as cores, tamanho, negrito e família
+        de fonte corretos no título da Toolbar.
+    -->
+    <style
+            name="TitleAppearance"
+            parent="@android:style/TextAppearance">
+
+        <item name="android:fontFamily">@font/pathway_gothic_one_regular</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <!--
+        Para colocarmos a cor correta nos ícones da Toolbar.
+    -->
+    <style
+            name="Toolbar"
+            parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <item name="colorControlNormal">@color/colorText</item>
+    </style>
+
     <style name="TextViewContentTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

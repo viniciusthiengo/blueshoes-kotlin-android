@@ -42,5 +42,6 @@
         android:layout_toEndOf="@+id/tv_or"
         android:layout_centerVertical="true"
         android:textColor="@color/colorLink"
-        android:text="@string/tx_me_sign_up"/>
+        android:text="@string/tx_me_sign_up"
+        android:onClick="callSignUpActivity"/>
 </RelativeLayout>

@@ -38,3 +38,7 @@ dependencies {
     /* AndroidUtilCode API */
     implementation 'com.blankj:utilcode:1.23.7'
 }
+
+androidExtensions {
+    experimental = true
+}

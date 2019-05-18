@@ -1,9 +1,11 @@
 package thiengo.com.br.blueshoes.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
 import android.view.View
+import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.ScreenUtils
 import kotlinx.android.synthetic.main.content_sign_up.*
 import thiengo.com.br.blueshoes.R
@@ -113,6 +115,16 @@ class SignUpActivity :
 
     /* Listener de clique */
         fun callLoginActivity( view: View ){
-            finish()
+            /*
+             * Para evitar que tenhamos mais de uma
+             * LoginActivity na pilha de atividades.
+             * */
+            if( ActivityUtils.isActivityExistsInStack( LoginActivity::class.java ) ){
+                finish()
+            }
+            else{
+                val intent = Intent( this, LoginActivity::class.java )
+                startActivity( intent )
+            }
         }
 }
