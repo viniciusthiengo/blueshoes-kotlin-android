@@ -226,4 +226,26 @@
     <string name="setting_item_credit_cards_desc">
         Para adição e remoção de cartões de crédito.
     </string>
+
+
+    <!-- ConfigProfileActivity -->
+    <string name="title_activity_config_profile">
+        Perfil
+    </string>
+
+    <string name="info_profile_photo">
+        Toque na foto para abrir a galeria ou fotografia.
+    </string>
+
+    <string name="name_label">Nome:</string>
+    <string name="config_profile">Atualizar perfil</string>
+    <string name="config_profile_going">Atualizando&#8230;</string>
+
+    <string name="invalid_name">
+        Nome inválido.
+    </string>
+
+    <string name="invalid_config_profile">
+        Um nome válido deve ser fornecido
+    </string>
 </resources>

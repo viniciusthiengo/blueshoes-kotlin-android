@@ -41,5 +41,10 @@
             android:name=".view.AccountSettingsActivity"
             android:label="@string/title_activity_account_settings"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".view.ConfigProfileActivity"
+            android:label="@string/title_activity_config_profile"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>
