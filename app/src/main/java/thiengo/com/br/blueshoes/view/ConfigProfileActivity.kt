@@ -146,11 +146,11 @@ class ConfigProfileActivity :
 
     private fun setConstraintsRelativeToSiblingView(
         constraintSet: ConstraintSet,
-        privacyId: Int
+        targetViewId: Int
     ) {
 
         constraintSet.connect(
-            privacyId,
+            targetViewId,
             ConstraintLayout.LayoutParams.BOTTOM,
             tv_name.id,
             ConstraintLayout.LayoutParams.TOP,
