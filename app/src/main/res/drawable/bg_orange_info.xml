@@ -3,6 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
+    <solid android:color="@android:color/transparent" />
+
     <!--
         Definindo bordas de 1dp de espessura e na cor laranja.
     -->

@@ -2,16 +2,16 @@ package thiengo.com.br.blueshoes.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.view.GravityCompat
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.selection.StorageStrategy
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.nav_header_user_logged.*
@@ -257,7 +257,7 @@ class MainActivity :
         replaceFragment( fragment )
     }
 
-    private fun getFragment( fragId: Long ): Fragment{
+    private fun getFragment( fragId: Long ): Fragment {
 
         return when( fragId ){
             R.id.item_about.toLong() -> AboutFragment()

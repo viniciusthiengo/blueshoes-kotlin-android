@@ -1,37 +1,42 @@
 package thiengo.com.br.blueshoes.view
 
-import android.Manifest
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.constraint.ConstraintSet
 import android.view.View
-import android.widget.Toast
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.ScreenUtils
 import kotlinx.android.synthetic.main.content_config_profile.*
-import kotlinx.android.synthetic.main.content_forgot_password.*
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.User
 import thiengo.com.br.blueshoes.util.validate
-import pub.devrel.easypermissions.EasyPermissions
-import pub.devrel.easypermissions.PermissionRequest
-import android.content.pm.ActivityInfo
 import android.content.Intent
 import android.app.Activity
-import android.net.Uri
 import android.util.Log
 import com.nguyenhoanglam.imagepicker.ui.imagepicker.ImagePicker
-import android.R.attr.data
+import android.graphics.Color
+import android.os.Environment
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.content.ContextCompat
 import com.nguyenhoanglam.imagepicker.model.Config.EXTRA_IMAGES
 import com.nguyenhoanglam.imagepicker.model.Config.RC_PICK_IMAGES
-import com.nguyenhoanglam.imagepicker.model.Config
 import com.nguyenhoanglam.imagepicker.model.Image
+import com.squareup.picasso.Picasso
+import java.io.File
+import android.R.attr.bottomLeftRadius
+import android.R.attr.bottomRightRadius
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import com.blankj.utilcode.util.ColorUtils
+import android.graphics.BitmapFactory
+import android.graphics.Bitmap
+import android.graphics.Canvas
 
 
 class ConfigProfileActivity :
     FormActivity(),
-    KeyboardUtils.OnSoftInputChangedListener,
-    EasyPermissions.PermissionCallbacks {
+    KeyboardUtils.OnSoftInputChangedListener {
+
+    val rivSize = (108 * ScreenUtils.getScreenDensity()).toInt()
 
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
@@ -40,7 +45,6 @@ class ConfigProfileActivity :
             this,
             this
         )
-
 
         et_name.validate(
             {
@@ -69,7 +73,7 @@ class ConfigProfileActivity :
     }
 
     override fun blockFields( status: Boolean ){
-        iv_profile.isEnabled = !status
+        riv_profile.isEnabled = !status
         et_name.isEnabled = !status
         bt_send_profile.isEnabled = !status
     }
@@ -81,28 +85,6 @@ class ConfigProfileActivity :
             else
                 getString( R.string.config_profile )
     }
-
-    fun callGallery( view: View ){
-        /*Toast
-            .makeText(this, "TODO", Toast.LENGTH_SHORT)
-            .show()*/
-
-        EasyPermissions.requestPermissions(
-            PermissionRequest.Builder(
-                    this,
-                    195,
-                    Manifest.permission.CAMERA,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE
-                )
-                //.setRationale(R.string.camera_and_location_rationale)
-                //.setPositiveButtonText(R.string.rationale_ask_ok)
-                //.setNegativeButtonText(R.string.rationale_ask_cancel)
-                //.setTheme(R.style.my_fancy_style)
-                .build()
-        )
-    }
-
 
     override fun onDestroy() {
         KeyboardUtils.unregisterSoftInputChangedListener( this )
@@ -118,16 +100,16 @@ class ConfigProfileActivity :
     }
 
     private fun isAbleToCallChangeTargetViewConstraints()
-            = true
+        = true
 
     private fun changeTargetViewConstraints(
         isKeyBoardOpened: Boolean
     ){
 
-        val photoProfileId = iv_profile.id
-        val parent = iv_profile.parent as ConstraintLayout
+        val photoProfileId = riv_profile.id
+        val parent = riv_profile.parent as ConstraintLayout
         val constraintSet = ConstraintSet()
-        val size = (108 * ScreenUtils.getScreenDensity()).toInt()
+        //val size = rivSize
 
         /*
          * Definindo a largura e a altura da View em
@@ -136,11 +118,11 @@ class ConfigProfileActivity :
          * */
         constraintSet.constrainWidth(
             photoProfileId,
-            size
+            rivSize
         )
         constraintSet.constrainHeight(
             photoProfileId,
-            size
+            rivSize
         )
 
         /*
@@ -188,90 +170,83 @@ class ConfigProfileActivity :
         )
     }
 
-    override fun onRequestPermissionsResult(
+    fun callGallery( view: View ){
+
+        val colorPrimary = ColorUtils.int2ArgbString( ColorUtils.getColor(R.color.colorPrimary) )
+        val colorPrimaryDark = ColorUtils.int2ArgbString( ColorUtils.getColor(R.color.colorPrimaryDark) )
+        val colorText = ColorUtils.int2ArgbString( ColorUtils.getColor(R.color.colorText) )
+        val colorWhite = ColorUtils.int2ArgbString( Color.WHITE )
+
+        ImagePicker
+            .with(this) /* Inicializa a ImagePicker API com um context (Activity ou Fragment) */
+            .setToolbarColor( colorPrimary )
+            .setStatusBarColor( colorPrimaryDark )
+            .setToolbarTextColor( colorText )
+            .setToolbarIconColor( colorText )
+            .setProgressBarColor( colorPrimaryDark )
+            .setBackgroundColor( colorWhite )
+            .setMultipleMode( false )
+            .setFolderMode( true )
+            .setShowCamera( true )
+            .setFolderTitle( getString(R.string.imagepicker_gallery_activity) ) /* Nome da tela de galeria da ImagePicker API (funciona quando FolderMode = true). */
+            .setLimitMessage( getString(R.string.imagepicker_selection_limit) )
+            .setSavePath( getString(R.string.imagepicker_cam_photos_activity) ) /* Folder das imagens de câmera, tiradas a partir da ImagePicker API. */
+            .setKeepScreenOn( true ) /* Mantém a tela acionada enquanto a galeria estiver aberta. */
+            .start()
+    }
+
+    override fun onActivityResult(
         requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray) {
+        resultCode: Int,
+        data: Intent? ) {
 
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if( requestCode == RC_PICK_IMAGES
+            && resultCode == Activity.RESULT_OK
+            && data != null ){
 
-        // Forward results to EasyPermissions
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
-    }
+            val images = data.getParcelableArrayListExtra<Image>( EXTRA_IMAGES )
 
-    override fun onPermissionsGranted(requestCode: Int, list: List<String>) {
-        /*Toast
-            .makeText(this, "OK", Toast.LENGTH_SHORT)
-            .show()*/
+            if( images.isNotEmpty() ){
 
-        /*Matisse.from(this)
-            .choose(MimeType.ofImage())
-            .capture(true)
-            .captureStrategy(
-                CaptureStrategy(
-                    true,
-                    "br.com.kroton.gnaction",
-                    CAPTURE_FOLDER
-                )
-            )
-            .countable(true)
-            .maxSelectable(1)
-            // .addFilter(GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
-            // .gridExpectedSize(resources.getDimensionPixelSize(R.dimen.grid_expected_size))
-            .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-            .thumbnailScale(0.85f)
-            .imageEngine(GlideEngine())
-            .forResult(196)*/
+                /*
+                 * Removendo android:tint, caso contrário a
+                 * imagem escolhida pelo usuário fica toda
+                 * na cor definida como valor de android:tint.
+                 * */
+                riv_profile.setColorFilter(Color.TRANSPARENT)
 
-        ImagePicker.with(this)                         //  Initialize ImagePicker with activity or fragment context
-            //.setToolbarColor("#212121")         //  Toolbar color
-            //.setStatusBarColor("#000000")       //  StatusBar color (works with SDK >= 21  )
-            //.setToolbarTextColor("#FFFFFF")     //  Toolbar text color (Title and Done button)
-            //.setToolbarIconColor("#FFFFFF")     //  Toolbar icon color (Back and Camera button)
-            //.setProgressBarColor("#4CAF50")     //  ProgressBar color
-            //.setBackgroundColor("#212121")      //  Background color
-            //.setCameraOnly(false)               //  Camera mode
-            .setMultipleMode(false)              //  Select multiple images or single image
-            .setFolderMode(true)                //  Folder mode
-            .setShowCamera(true)                //  Show camera button
-            .setFolderTitle("Galeria")           //  Folder title (works with FolderMode = true)
-            .setImageTitle("Galleries")         //  Image title (works with FolderMode = false)
-            .setDoneTitle("Finalizar")               //  Done button title
-            .setLimitMessage("Apenas uma imagem pode ser selecionada.")    // Selection limit message
-            .setMaxSize(1)                     //  Max images can be selected
-            .setSavePath("image-picker")         //  Image capture folder name
-            //.setSelectedImages(images)          //  Selected images
-            //.setAlwaysShowDoneButton(true)      //  Set always show done button in multiple mode
-            .setRequestCode(100)                //  Set request code, default Config.RC_PICK_IMAGES
-            .setKeepScreenOn(true)              //  Keep screen on when selecting images
-            .start();                           //  Start ImagePicker
-    }
-
-    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
-        Toast
-            .makeText(this, "NO", Toast.LENGTH_SHORT)
-            .show()
-    }
-
-    var mSelected = listOf<Uri>()
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        //super.onActivityResult(requestCode, resultCode, data)
-
-        /*if (requestCode == 196 && resultCode == Activity.RESULT_OK) {
-            mSelected = Matisse.obtainResult(data!!)
-            Log.d("Matisse", "mSelected: $mSelected")
-        }*/
-
-        if (requestCode == Config.RC_PICK_IMAGES && resultCode == Activity.RESULT_OK && data != null) {
-            val images = data.getParcelableArrayListExtra<Image>(Config.EXTRA_IMAGES)
-
-            Toast
-                .makeText(this, "Image number: ${images.size}", Toast.LENGTH_SHORT)
-                .show()
-            // do your logic here...
+                /*
+                 * Primeiro, é necessário transformar o path String da
+                 * imagem em um path File para que ela seja carregada
+                 * com a Picasso API (para mim a melhor API para
+                 * carregamento de imagens remotas e locais).
+                 *
+                 * Segundo, os métodos resize() e centerCrop() precisam
+                 * ser invocados no carregamento de imagens que vieram
+                 * da API ImagePicker quando a API de carregamento é a
+                 * Picasso API, isso é apenas uma regra de negócio
+                 * definida para a ImagePicker API pelos desenvolvedores
+                 * desta library.
+                 * */
+                Picasso
+                    .get()
+                    .load( File( images.first().path ) )
+                    .resize( rivSize, rivSize )
+                    .centerCrop()
+                    .into( riv_profile )
+            }
         }
-        super.onActivityResult(requestCode, resultCode, data)  // You MUST have this line to be here
-        // so ImagePicker can work with fragment mode
+
+        /*
+         * Note que em nossa lógica de negócio, se não houver imagem
+         * selecionada, o que estiver atualmente presente como imagem
+         * de perfil continua sendo a imagem de perfil.
+         * */
+
+        /*
+         * A invocação a super.onActivityResult() tem que
+         * vir após a verificação / obtenção da imagem.
+         * */
+        super.onActivityResult( requestCode, resultCode, data )
     }
 }

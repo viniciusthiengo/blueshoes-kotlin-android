@@ -1,14 +1,14 @@
 package thiengo.com.br.blueshoes.view
 
 import android.graphics.Color
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.RecyclerView
+import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.selection.SelectionTracker
+import androidx.recyclerview.widget.RecyclerView
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.NavMenuItem
 import thiengo.com.br.blueshoes.util.NavMenuItemDetails

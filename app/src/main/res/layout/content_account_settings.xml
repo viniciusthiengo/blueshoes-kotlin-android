@@ -19,7 +19,7 @@
         android:textStyle="bold"
         android:background="@color/colorTextBox"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_account_settings_items"
         android:layout_width="match_parent"
         android:layout_height="0dp"

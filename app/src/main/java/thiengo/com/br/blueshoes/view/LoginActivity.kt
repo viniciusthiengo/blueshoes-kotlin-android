@@ -2,9 +2,9 @@ package thiengo.com.br.blueshoes.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.constraint.ConstraintSet
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.ScreenUtils
 import kotlinx.android.synthetic.main.content_login.*

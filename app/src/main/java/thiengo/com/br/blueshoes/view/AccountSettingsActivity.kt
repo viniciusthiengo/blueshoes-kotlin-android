@@ -1,11 +1,11 @@
 package thiengo.com.br.blueshoes.view
 
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.content_account_settings.*
 import thiengo.com.br.blueshoes.R

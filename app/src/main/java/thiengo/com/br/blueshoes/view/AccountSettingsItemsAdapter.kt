@@ -1,11 +1,11 @@
 package thiengo.com.br.blueshoes.view
 
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.AccountSettingItem
 import thiengo.com.br.blueshoes.domain.User

@@ -12,7 +12,7 @@
 
     <include layout="@layout/nav_header_user_logged"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_menu_items"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -27,7 +27,7 @@
         android:layout_height="0.5dp"
         android:background="@color/colorViewLine"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_menu_items_logged"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

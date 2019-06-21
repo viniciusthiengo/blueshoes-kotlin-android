@@ -248,4 +248,16 @@
     <string name="invalid_config_profile">
         Um nome válido deve ser fornecido
     </string>
+
+        <!-- Image Picker API - Sobreposição de String -->
+        <string name="imagepicker_msg_no_images">
+            Não há imagens na galeria.
+        </string>
+        <string name="imagepicker_gallery_activity">Galeria</string>
+        <string name="imagepicker_cam_photos_activity">
+            Fotos câmera BlueShoes
+        </string>
+        <string name="imagepicker_selection_limit">
+            Apenas uma imagem pode ser selecionada.
+        </string>
 </resources>

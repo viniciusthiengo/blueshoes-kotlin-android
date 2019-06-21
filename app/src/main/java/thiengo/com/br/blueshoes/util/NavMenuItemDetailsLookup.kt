@@ -1,8 +1,8 @@
 package thiengo.com.br.blueshoes.util
 
-import android.support.v7.widget.RecyclerView
 import android.view.MotionEvent
 import androidx.recyclerview.selection.ItemDetailsLookup
+import androidx.recyclerview.widget.RecyclerView
 import thiengo.com.br.blueshoes.view.NavMenuItemsAdapter
 
 /*
@@ -12,7 +12,7 @@ import thiengo.com.br.blueshoes.view.NavMenuItemsAdapter
  * de ItemDetails que são submetidas a backup (ou extraídas)
  * de uma ocorrência de RecyclerView.ViewHolder.
  * */
-class NavMenuItemDetailsLookup( val rvMenuItems: RecyclerView ) :
+class NavMenuItemDetailsLookup( val rvMenuItems: RecyclerView) :
     ItemDetailsLookup<Long>() {
 
     /*

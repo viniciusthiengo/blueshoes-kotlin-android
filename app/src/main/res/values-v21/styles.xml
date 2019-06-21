@@ -11,4 +11,18 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <!--
+        Sobrescrevendo o tema imagepicker_ToolbarTitleText da
+        ImagePicker API para que o estilo de título em barra de
+        topo do aplicativo BlueShoes também seja aplicado às
+        atividades desta API.
+    -->
+    <style name="imagepicker_ToolbarTitleText"
+           parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+
+        <item name="android:fontFamily">@font/pathway_gothic_one_regular</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
