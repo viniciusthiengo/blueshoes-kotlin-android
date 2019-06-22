@@ -4,8 +4,6 @@ import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.os.SystemClock
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ImageSpan
@@ -15,6 +13,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.content_form.*

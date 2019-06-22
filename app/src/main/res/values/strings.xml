@@ -249,7 +249,7 @@
         Um nome válido deve ser fornecido
     </string>
 
-        <!-- Image Picker API - Sobreposição de String -->
+        <!-- Image Picker API - Adição e sobreposição de String -->
         <string name="imagepicker_msg_no_images">
             Não há imagens na galeria.
         </string>

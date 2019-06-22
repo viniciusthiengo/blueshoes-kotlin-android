@@ -1,42 +1,29 @@
 package thiengo.com.br.blueshoes.view
 
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import com.blankj.utilcode.util.ColorUtils
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.ScreenUtils
+import com.nguyenhoanglam.imagepicker.model.Config.EXTRA_IMAGES
+import com.nguyenhoanglam.imagepicker.model.Config.RC_PICK_IMAGES
+import com.nguyenhoanglam.imagepicker.model.Image
+import com.nguyenhoanglam.imagepicker.ui.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.content_config_profile.*
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.User
 import thiengo.com.br.blueshoes.util.validate
-import android.content.Intent
-import android.app.Activity
-import android.util.Log
-import com.nguyenhoanglam.imagepicker.ui.imagepicker.ImagePicker
-import android.graphics.Color
-import android.os.Environment
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.content.ContextCompat
-import com.nguyenhoanglam.imagepicker.model.Config.EXTRA_IMAGES
-import com.nguyenhoanglam.imagepicker.model.Config.RC_PICK_IMAGES
-import com.nguyenhoanglam.imagepicker.model.Image
-import com.squareup.picasso.Picasso
-import java.io.File
-import android.R.attr.bottomLeftRadius
-import android.R.attr.bottomRightRadius
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.GradientDrawable
-import com.blankj.utilcode.util.ColorUtils
-import android.graphics.BitmapFactory
-import android.graphics.Bitmap
-import android.graphics.Canvas
 
 
 class ConfigProfileActivity :
     FormActivity(),
     KeyboardUtils.OnSoftInputChangedListener {
-
-    val rivSize = (108 * ScreenUtils.getScreenDensity()).toInt()
 
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
@@ -109,7 +96,7 @@ class ConfigProfileActivity :
         val photoProfileId = riv_profile.id
         val parent = riv_profile.parent as ConstraintLayout
         val constraintSet = ConstraintSet()
-        //val size = rivSize
+        val size = (108 * ScreenUtils.getScreenDensity()).toInt()
 
         /*
          * Definindo a largura e a altura da View em
@@ -118,11 +105,11 @@ class ConfigProfileActivity :
          * */
         constraintSet.constrainWidth(
             photoProfileId,
-            rivSize
+            size
         )
         constraintSet.constrainHeight(
             photoProfileId,
-            rivSize
+            size
         )
 
         /*
@@ -172,10 +159,18 @@ class ConfigProfileActivity :
 
     fun callGallery( view: View ){
 
-        val colorPrimary = ColorUtils.int2ArgbString( ColorUtils.getColor(R.color.colorPrimary) )
-        val colorPrimaryDark = ColorUtils.int2ArgbString( ColorUtils.getColor(R.color.colorPrimaryDark) )
-        val colorText = ColorUtils.int2ArgbString( ColorUtils.getColor(R.color.colorText) )
-        val colorWhite = ColorUtils.int2ArgbString( Color.WHITE )
+        val colorPrimary = ColorUtils.int2ArgbString(
+            ColorUtils.getColor(R.color.colorPrimary)
+        )
+        val colorPrimaryDark = ColorUtils.int2ArgbString(
+            ColorUtils.getColor(R.color.colorPrimaryDark)
+        )
+        val colorText = ColorUtils.int2ArgbString(
+            ColorUtils.getColor(R.color.colorText)
+        )
+        val colorWhite = ColorUtils.int2ArgbString(
+            Color.WHITE
+        )
 
         ImagePicker
             .with(this) /* Inicializa a ImagePicker API com um context (Activity ou Fragment) */
@@ -207,33 +202,9 @@ class ConfigProfileActivity :
             val images = data.getParcelableArrayListExtra<Image>( EXTRA_IMAGES )
 
             if( images.isNotEmpty() ){
-
-                /*
-                 * Removendo android:tint, caso contrário a
-                 * imagem escolhida pelo usuário fica toda
-                 * na cor definida como valor de android:tint.
-                 * */
-                riv_profile.setColorFilter(Color.TRANSPARENT)
-
-                /*
-                 * Primeiro, é necessário transformar o path String da
-                 * imagem em um path File para que ela seja carregada
-                 * com a Picasso API (para mim a melhor API para
-                 * carregamento de imagens remotas e locais).
-                 *
-                 * Segundo, os métodos resize() e centerCrop() precisam
-                 * ser invocados no carregamento de imagens que vieram
-                 * da API ImagePicker quando a API de carregamento é a
-                 * Picasso API, isso é apenas uma regra de negócio
-                 * definida para a ImagePicker API pelos desenvolvedores
-                 * desta library.
-                 * */
-                Picasso
-                    .get()
-                    .load( File( images.first().path ) )
-                    .resize( rivSize, rivSize )
-                    .centerCrop()
-                    .into( riv_profile )
+                riv_profile.setImageURI(
+                    Uri.parse( images.first().path )
+                )
             }
         }
 
