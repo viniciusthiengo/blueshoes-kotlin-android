@@ -3,6 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
+    <!--
+        Se o background transparente não for definido, o fundo
+        do shape, em versões antigas do Android, ficará preto.
+    -->
     <solid android:color="@android:color/transparent" />
 
     <!--
