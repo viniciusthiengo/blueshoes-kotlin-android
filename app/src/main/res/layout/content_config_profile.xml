@@ -15,11 +15,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:src="@drawable/profile_hint"
-        android:scaleType="centerInside"
+        android:scaleType="centerCrop"
         android:onClick="callGallery"
         app:riv_border_color="@color/colorViewLine"
         app:riv_border_width="1dp"
-        app:riv_corner_radius="54dp"
+        app:riv_corner_radius="108dp"
         app:riv_mutate_background="false"
         app:riv_oval="true"
         app:riv_tile_mode="clamp"/>
