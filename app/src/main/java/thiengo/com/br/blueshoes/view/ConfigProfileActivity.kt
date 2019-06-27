@@ -48,7 +48,9 @@ class ConfigProfileActivity :
         val user = intent.getParcelableExtra<User>( User.KEY )
         et_name.setText( user.name )
 
-        riv_profile.setImageResource( user.image )
+        riv_profile.setImageResource(
+            user?.image ?: R.drawable.profile_hint
+        )
     }
 
     override fun getLayoutResourceID()
