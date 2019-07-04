@@ -249,15 +249,55 @@
         Um nome válido deve ser fornecido
     </string>
 
-        <!-- Image Picker API - Adição e sobreposição de String -->
-        <string name="imagepicker_msg_no_images">
-            Não há imagens na galeria.
-        </string>
-        <string name="imagepicker_gallery_activity">Galeria</string>
-        <string name="imagepicker_cam_photos_activity">
-            Fotos câmera BlueShoes
-        </string>
-        <string name="imagepicker_selection_limit">
-            Apenas uma imagem pode ser selecionada.
-        </string>
+    <!-- Image Picker API - Adição e sobreposição de String -->
+    <string name="imagepicker_msg_no_images">
+        Não há imagens na galeria.
+    </string>
+    <string name="imagepicker_gallery_activity">Galeria</string>
+    <string name="imagepicker_cam_photos_activity">
+        Fotos câmera BlueShoes
+    </string>
+    <string name="imagepicker_selection_limit">
+        Apenas uma imagem pode ser selecionada.
+    </string>
+
+
+    <!-- ConfigConnectionDataActivity -->
+    <string name="title_activity_config_connection_data">
+        Conexão (login)
+    </string>
+
+
+    <!-- Dialog Password -->
+    <string name="dialog_password_info">
+        Entre com a senha para poder prosseguir:
+    </string>
+    <string name="dialog_password_hint">Senha</string>
+    <string name="dialog_password_go">PROSSEGUIR</string>
+    <string name="dialog_password_cancel">CANCELAR</string>
+
+
+    <!-- ConfigEmailFragment -->
+    <string name="config_connection_data_tab_email">E-MAIL</string>
+
+    <string name="hint_current_email">E-mail atual</string>
+    <string name="hint_new_email">Novo e-mail</string>
+    <string name="hint_new_email_confirm">Confirmar novo e-mail</string>
+
+    <string name="invalid_confirmed_email">
+        Confirme o e-mail informado no campo acima.
+    </string>
+
+    <string name="update_email_login">Atualizar e-mail de login</string>
+    <string name="update_email_login_going">Atualizando&#8230;</string>
+
+
+    <!-- ConfigPasswordFragment -->
+    <string name="config_connection_data_tab_password">SENHA</string>
+
+    <string name="hint_new_password">Nova senha</string>
+    <string name="hint_new_password_confirm">Confirmar nova senha</string>
+
+    <string name="update_password">Atualizar senha</string>
+    <string name="update_password_going">Atualizando&#8230;</string>
 </resources>

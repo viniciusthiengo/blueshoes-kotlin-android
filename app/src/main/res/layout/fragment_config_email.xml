@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_container_fields"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_current_email"
+            style="@style/EditTextFormField"
+            android:background="@drawable/bg_form_field_top"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
+            android:hint="@string/hint_current_email"/>
+
+        <EditText
+            android:id="@+id/et_new_email"
+            style="@style/EditTextFormField"
+            android:layout_marginTop="-1dp"
+            android:background="@drawable/bg_form_field_sqr"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
+            android:hint="@string/hint_new_email"/>
+
+        <EditText
+            android:id="@+id/et_new_email_confirm"
+            style="@style/EditTextFormField"
+            android:layout_marginTop="-1dp"
+            android:background="@drawable/bg_form_field_bottom"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionDone"
+            android:hint="@string/hint_new_email_confirm"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_update_email_login"
+        style="@style/ButtonForm"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_gravity="end"
+        android:text="@string/update_email_login"/>
+</LinearLayout>

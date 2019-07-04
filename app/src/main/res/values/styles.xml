@@ -63,8 +63,8 @@
         atividades desta API.
     -->
     <style
-        name="imagepicker_ToolbarTitleText"
-        parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+            name="imagepicker_ToolbarTitleText"
+            parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
 
         <item name="android:fontFamily">@font/pathway_gothic_one_regular</item>
         <item name="android:textSize">22sp</item>
