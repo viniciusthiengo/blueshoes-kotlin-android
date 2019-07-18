@@ -1,9 +1,8 @@
-package thiengo.com.br.blueshoes.view.config.connectiondata
+package thiengo.com.br.blueshoes.view.config.creditcard
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import thiengo.com.br.blueshoes.R
 
 
 /**
@@ -16,7 +15,7 @@ import thiengo.com.br.blueshoes.R
  * eles possam ser utilizados novamente, isso enquanto houver
  * caminho de volta a eles (transição entre Tabs, por exemplo).
  */
-class ConfigConnectionDataSectionsAdapter(
+class ConfigCreditCardsSectionsAdapter(
     val context: Context,
     fm: FragmentManager ) : FragmentPagerAdapter( fm ) {
 
@@ -32,15 +31,15 @@ class ConfigConnectionDataSectionsAdapter(
      * */
     override fun getItem( position: Int )
         = when( position ){
-            EMAIL_PAGE_POS -> ConfigEmailFragment()
-            else -> ConfigPasswordFragment()
+            EMAIL_PAGE_POS -> ConfigCreditCardsListFragment()
+            else -> ConfigNewCreditCardFragment()
         }
 
     override fun getPageTitle( position: Int )
         = context.getString(
             when( position ){
-                EMAIL_PAGE_POS -> ConfigEmailFragment.TAB_TITLE
-                else -> ConfigPasswordFragment.TAB_TITLE
+                EMAIL_PAGE_POS -> ConfigCreditCardsListFragment.TAB_TITLE
+                else -> ConfigNewCreditCardFragment.TAB_TITLE
             }
         )
 

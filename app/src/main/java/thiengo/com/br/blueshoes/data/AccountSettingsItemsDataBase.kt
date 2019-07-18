@@ -5,6 +5,7 @@ import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.AccountSettingItem
 import thiengo.com.br.blueshoes.view.ConfigProfileActivity
 import thiengo.com.br.blueshoes.view.config.connectiondata.ConfigConnectionDataActivity
+import thiengo.com.br.blueshoes.view.config.creditcard.ConfigCreditCardsActivity
 
 class AccountSettingsItemsDataBase {
 
@@ -30,7 +31,7 @@ class AccountSettingsItemsDataBase {
                 AccountSettingItem(
                     context.getString( R.string.setting_item_credit_cards ),
                     context.getString( R.string.setting_item_credit_cards_desc ),
-                    ConfigProfileActivity::class.java
+                    ConfigCreditCardsActivity::class.java
                 )
             )
     }

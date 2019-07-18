@@ -41,6 +41,9 @@ dependencies {
     /* Image Gallery e Camera API */
     implementation 'com.github.nguyenhoanglam:ImagePicker:1.3.3'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    /* Máscara EditText API */
+    implementation 'com.github.santalu:mask-edittext:1.1.1'
 }
 
 androidExtensions {

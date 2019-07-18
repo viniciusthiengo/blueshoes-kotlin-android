@@ -1,4 +1,4 @@
-package thiengo.com.br.blueshoes.view.config.connectiondata
+package thiengo.com.br.blueshoes.view.config.creditcard
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -8,7 +8,8 @@ import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_tabs_user_config.*
 import thiengo.com.br.blueshoes.R
 
-class ConfigConnectionDataActivity : AppCompatActivity() {
+class ConfigCreditCardsActivity :
+    AppCompatActivity() {
 
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
@@ -36,7 +37,7 @@ class ConfigConnectionDataActivity : AppCompatActivity() {
          * no ViewPager.
          * */
         val sectionsPagerAdapter =
-            ConfigConnectionDataSectionsAdapter(
+            ConfigCreditCardsSectionsAdapter(
                 this,
                 supportFragmentManager
             )

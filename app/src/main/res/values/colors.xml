@@ -32,4 +32,6 @@
     <color name="colorTextBox">#EEEEEE</color>
     <color name="colorLightGrey">#AAAAAA</color>
     <color name="colorLighterGrey">#EFEFEF</color>
+
+    <color name="colorLightRed">#F85F62</color>
 </resources>

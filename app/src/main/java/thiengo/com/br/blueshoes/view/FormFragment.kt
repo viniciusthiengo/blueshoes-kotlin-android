@@ -9,11 +9,9 @@ import android.os.SystemClock
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ImageSpan
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
@@ -174,6 +172,7 @@ abstract class FormFragment :
      * botão em tela.
      * */
     fun mainAction( view: View? = null ){
+
         blockFields( true )
         isMainButtonSending( true )
         showProxy( true )
@@ -238,7 +237,7 @@ abstract class FormFragment :
      * alguns formulários críticos onde parte da validação é a
      * verificação da senha.
      * */
-    protected fun callPasswordDialog(){
+    fun callPasswordDialog(){
 
         val builder = AlertDialog.Builder( activity!! )
         val inflater = activity!!.layoutInflater
@@ -299,5 +298,22 @@ abstract class FormFragment :
             }
         )
         dialog.show()
+    }
+
+    /*
+     * Método necessário para atualizar o ViewGroup
+     * fl_form, que é container dos layouts de formulários
+     * carregados em fragment_form, deixando ele
+     * pronto para receber uma lista de itens ou formulários
+     * que têm os próprios padding e posicionamento.
+     * */
+    fun updateFlFormToFullFreeScreen(){
+
+        fl_form.setPadding(0,0,0,0)
+
+        val layoutParams = (fl_form.layoutParams as FrameLayout.LayoutParams)
+        layoutParams.gravity = Gravity.NO_GRAVITY
+        layoutParams.width = FrameLayout.LayoutParams.MATCH_PARENT
+        layoutParams.height = FrameLayout.LayoutParams.MATCH_PARENT
     }
 }
