@@ -6,6 +6,8 @@ import android.view.View
 import com.santalu.maskedittext.MaskEditText
 import kotlinx.android.synthetic.main.fragment_config_new_credit_card.*
 import thiengo.com.br.blueshoes.R
+import thiengo.com.br.blueshoes.util.isValidCNPJ
+import thiengo.com.br.blueshoes.util.isValidCPF
 import thiengo.com.br.blueshoes.view.FormFragment
 
 
@@ -33,10 +35,10 @@ class ConfigNewCreditCardFragment :
 
         met_credit_card_owner_reg.setOnFocusChangeListener( this )
 
-        //et_credit_card_owner_reg.setText("12033441717")
         met_credit_card_number.setText("4794795248635556")
         et_credit_card_owner_name.setText("Amya Allen")
         met_credit_card_owner_reg.setText("63597340016")
+        met_credit_card_owner_reg.setText("25002230000110")
         et_credit_card_expiry_year.setText("2023")
         et_credit_card_security_code.setText("266")
     }
@@ -59,11 +61,11 @@ class ConfigNewCreditCardFragment :
             .replace( pattern, "" )
 
         if( !hasFocus ){
-            if( content.length == 11 ){
+            if( content.isValidCPF() ){
                 /* Máscara CPF. */
                 mask = "###.###.###-##"
             }
-            else if( content.length == 14 ){
+            else if( content.isValidCNPJ() ){
                 /* Máscara CNPJ. */
                 mask = "##.###.###/####-##"
             }

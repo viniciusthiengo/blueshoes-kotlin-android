@@ -21,7 +21,7 @@ class ConfigCreditCardsSectionsAdapter(
 
     companion object{
         const val TOTAL_PAGES = 2
-        const val EMAIL_PAGE_POS = 0
+        const val CREDIT_CARDS_PAGE_POS = 0
     }
 
     /*
@@ -31,14 +31,14 @@ class ConfigCreditCardsSectionsAdapter(
      * */
     override fun getItem( position: Int )
         = when( position ){
-            EMAIL_PAGE_POS -> ConfigCreditCardsListFragment()
+            CREDIT_CARDS_PAGE_POS -> ConfigCreditCardsListFragment()
             else -> ConfigNewCreditCardFragment()
         }
 
     override fun getPageTitle( position: Int )
         = context.getString(
             when( position ){
-                EMAIL_PAGE_POS -> ConfigCreditCardsListFragment.TAB_TITLE
+                CREDIT_CARDS_PAGE_POS -> ConfigCreditCardsListFragment.TAB_TITLE
                 else -> ConfigNewCreditCardFragment.TAB_TITLE
             }
         )

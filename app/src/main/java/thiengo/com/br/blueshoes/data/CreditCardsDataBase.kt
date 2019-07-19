@@ -1,12 +1,6 @@
 package thiengo.com.br.blueshoes.data
 
-import android.content.Context
-import thiengo.com.br.blueshoes.R
-import thiengo.com.br.blueshoes.domain.AccountSettingItem
 import thiengo.com.br.blueshoes.domain.CreditCard
-import thiengo.com.br.blueshoes.view.ConfigProfileActivity
-import thiengo.com.br.blueshoes.view.config.connectiondata.ConfigConnectionDataActivity
-import thiengo.com.br.blueshoes.view.config.creditcard.ConfigCreditCardsActivity
 
 class CreditCardsDataBase {
 

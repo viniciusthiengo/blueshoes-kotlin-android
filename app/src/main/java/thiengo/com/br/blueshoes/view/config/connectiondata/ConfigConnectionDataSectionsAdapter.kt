@@ -3,7 +3,6 @@ package thiengo.com.br.blueshoes.view.config.connectiondata
 import android.content.Context
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import thiengo.com.br.blueshoes.R
 
 
 /**
