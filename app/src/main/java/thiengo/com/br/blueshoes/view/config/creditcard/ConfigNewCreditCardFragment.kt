@@ -34,13 +34,6 @@ class ConfigNewCreditCardFragment :
         et_credit_card_security_code.setOnEditorActionListener( this )
 
         met_credit_card_owner_reg.setOnFocusChangeListener( this )
-
-        met_credit_card_number.setText("4794795248635556")
-        et_credit_card_owner_name.setText("Amya Allen")
-        met_credit_card_owner_reg.setText("63597340016")
-        met_credit_card_owner_reg.setText("25002230000110")
-        et_credit_card_expiry_year.setText("2023")
-        et_credit_card_security_code.setText("266")
     }
 
     override fun onFocusChange(
