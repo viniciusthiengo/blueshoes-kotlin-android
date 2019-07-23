@@ -28,7 +28,13 @@ class ConfigNewCreditCardFragment :
         updateFlFormToFullFreeScreen()
 
         bt_add_credit_card.setOnClickListener{
-            callPasswordDialog()
+            /*
+             * O método mainAction() é invocado no lugar
+             * de callPasswordDialog(), pois aqui não há
+             * necessidade de dialog de senha para a
+             * adição de cartão de crédito.
+             * */
+            mainAction()
         }
 
         et_credit_card_security_code.setOnEditorActionListener( this )
