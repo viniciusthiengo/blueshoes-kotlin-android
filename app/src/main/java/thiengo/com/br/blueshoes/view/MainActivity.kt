@@ -25,6 +25,8 @@ import thiengo.com.br.blueshoes.util.NavMenuItemDetailsLookup
 import thiengo.com.br.blueshoes.util.NavMenuItemKeyProvider
 import thiengo.com.br.blueshoes.util.NavMenuItemPredicate
 
+
+
 class MainActivity :
     AppCompatActivity() {
 
@@ -294,6 +296,7 @@ class MainActivity :
     }
 
     override fun onCreateOptionsMenu( menu: Menu ): Boolean {
+
         /*
          * Infla o menu. Adiciona itens a barra de topo, se
          * ela estiver presente.

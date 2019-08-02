@@ -30,8 +30,10 @@
     <color name="colorBackgroundProxy">#55FFFFFF</color>
 
     <color name="colorTextBox">#EEEEEE</color>
+    <color name="colorTextBoxTransparent">#CCEEEEEE</color>
     <color name="colorLightGrey">#AAAAAA</color>
     <color name="colorLighterGrey">#EFEFEF</color>
 
     <color name="colorLightRed">#F85F62</color>
+    <color name="colorLightBlue">#00A4FF</color>
 </resources>

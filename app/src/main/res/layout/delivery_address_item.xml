@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="2dp">
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Logradouro -->
+        <TextView
+            android:id="@+id/tv_street_label"
+            style="@style/TextViewFormItemListLabel"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/delivery_address_street_label"/>
+
+        <TextView
+            android:id="@+id/tv_street"
+            android:layout_toRightOf="@+id/tv_street_label"
+            android:layout_toEndOf="@+id/tv_street_label"
+            android:layout_alignTop="@+id/tv_street_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/colorText"/>
+
+        <!-- Número -->
+        <TextView
+            android:id="@+id/tv_number_label"
+            style="@style/TextViewFormItemListLabel"
+            android:layout_below="@+id/tv_street_label"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/delivery_address_number_label"/>
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_toRightOf="@+id/tv_number_label"
+            android:layout_toEndOf="@+id/tv_number_label"
+            android:layout_alignTop="@+id/tv_number_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"/>
+
+        <!-- CEP -->
+        <TextView
+            android:id="@+id/tv_zip_code_label"
+            style="@style/TextViewFormItemListLabel"
+            android:layout_below="@+id/tv_number_label"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/delivery_address_zip_code_label"/>
+
+        <TextView
+            android:id="@+id/tv_zip_code"
+            android:layout_toRightOf="@+id/tv_zip_code_label"
+            android:layout_toEndOf="@+id/tv_zip_code_label"
+            android:layout_alignTop="@+id/tv_zip_code_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"/>
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_zip_code_label"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp">
+
+                <!-- Bairro -->
+                <TextView
+                    android:id="@+id/tv_neighborhood_label"
+                    style="@style/TextViewFormItemListLabel"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/delivery_address_neighborhood_label"/>
+
+                <TextView
+                    android:id="@+id/tv_neighborhood"
+                    android:layout_toRightOf="@+id/tv_neighborhood_label"
+                    android:layout_toEndOf="@+id/tv_neighborhood_label"
+                    android:layout_alignTop="@+id/tv_neighborhood_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/colorText"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <!-- Cidade -->
+                <TextView
+                    android:id="@+id/tv_city_label"
+                    style="@style/TextViewFormItemListLabel"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/delivery_address_city_label"/>
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_toRightOf="@+id/tv_city_label"
+                    android:layout_toEndOf="@+id/tv_city_label"
+                    android:layout_alignTop="@+id/tv_city_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/colorText"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Estado -->
+        <TextView
+            android:id="@+id/tv_state_label"
+            style="@style/TextViewFormItemListLabel"
+            android:layout_below="@+id/ll_container"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/delivery_address_state_label"/>
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_toRightOf="@+id/tv_state_label"
+            android:layout_toEndOf="@+id/tv_state_label"
+            android:layout_alignTop="@+id/tv_state_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"/>
+
+        <!-- Complemento -->
+        <TextView
+            android:id="@+id/tv_complement_label"
+            style="@style/TextViewFormItemListLabel"
+            android:layout_below="@+id/tv_state_label"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/delivery_address_complement_label"/>
+
+        <TextView
+            android:id="@+id/tv_complement"
+            android:layout_toRightOf="@+id/tv_complement_label"
+            android:layout_toEndOf="@+id/tv_complement_label"
+            android:layout_alignTop="@+id/tv_complement_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/colorText"/>
+
+        <Button
+            android:id="@+id/bt_update"
+            android:layout_below="@+id/tv_complement_label"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:background="@drawable/bt_update"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:text="@string/update_item"/>
+
+        <Button
+            android:id="@+id/bt_remove"
+            android:layout_alignTop="@+id/bt_update"
+            android:layout_toLeftOf="@+id/bt_update"
+            android:layout_toStartOf="@+id/bt_update"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:background="@drawable/bt_remove"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:text="@string/remove_item"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

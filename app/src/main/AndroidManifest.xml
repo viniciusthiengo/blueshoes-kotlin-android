@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="thiengo.com.br.blueshoes">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -53,6 +54,11 @@
                 android:name=".view.config.creditcard.ConfigCreditCardsActivity"
                 android:label="@string/title_activity_config_credit_cards"
                 android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".view.config.deliveryaddress.ConfigDeliveryAddressesActivity"
+            android:label="@string/title_activity_config_delivery_addresses"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

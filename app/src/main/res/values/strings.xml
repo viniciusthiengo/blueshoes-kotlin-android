@@ -354,4 +354,58 @@
     <string name="invalid_credit_card">
         Cartão inválido, verifique os dados novamente.
     </string>
+
+
+    <!-- ConfigDeliveryAddressesActivity -->
+    <string name="title_activity_config_delivery_addresses">
+        Endereços para entrega
+    </string>
+
+
+    <!-- ConfigDeliveryAddressesListFragment -->
+    <string name="config_delivery_addresses_tab_list">ENDEREÇOS</string>
+
+    <string name="delivery_address_street_label">Logradouro:</string>
+    <string name="delivery_address_number_label">Número:</string>
+    <string name="delivery_address_zip_code_label">CEP:</string>
+    <string name="delivery_address_neighborhood_label">Bairro:</string>
+    <string name="delivery_address_city_label">Cidade:</string>
+    <string name="delivery_address_state_label">Estado:</string>
+    <string name="delivery_address_complement_label">Complemento:</string>
+
+    <string name="update_item">Atualizar</string>
+
+    <string name="delivery_address_list_empty">
+        Ainda não há endereços de entrega cadastrados.
+    </string>
+
+    <string name="delivery_address_removed">
+        Endereço removido com sucesso.
+    </string>
+
+
+    <!-- ConfigNewDeliveryAddressFragment -->
+    <string name="config_delivery_address_tab_new">NOVO</string>
+
+    <string name="add_delivery_address_street_label">Logradouro:</string>
+    <string name="add_delivery_address_number_label">Número:</string>
+    <string name="add_delivery_address_complement_label">Complemento:</string>
+    <string name="add_delivery_address_zip_code_label">CEP:</string>
+    <string name="add_delivery_address_neighborhood_label">Bairro:</string>
+    <string name="add_delivery_address_city_label">Cidade:</string>
+    <string name="add_delivery_address_state_label">Estado:</string>
+
+    <string name="invalid_delivery_address">
+        Falhou, tente novamente.
+    </string>
+
+    <string name="add_delivery_address">Adicionar endereço</string>
+    <string name="add_delivery_address_going">Adicionando&#8230;</string>
+
+
+    <!-- ConfigUpdateDeliveryAddressFragment -->
+    <string name="updating_delivery_address">Atualizando endereço.</string>
+
+    <string name="update_delivery_address">Atualizar endereço</string>
+    <string name="update_delivery_address_going">Atualizando&#8230;</string>
 </resources>
