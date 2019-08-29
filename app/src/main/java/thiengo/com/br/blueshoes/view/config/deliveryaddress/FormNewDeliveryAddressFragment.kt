@@ -5,14 +5,13 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.fragment_config_new_delivery_address.*
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.view.FormFragment
+import thiengo.com.br.blueshoes.view.config.ConfigFormFragment
 
 
-open class ConfigNewDeliveryAddressFragment :
-    FormFragment() {
+open class FormNewDeliveryAddressFragment :
+    ConfigFormFragment() {
 
     companion object{
-        const val TAB_TITLE = R.string.config_delivery_address_tab_new
-
         /*
          * A constante abaixo representa a posição
          * deste fragmento no ViewPager. Os
@@ -21,6 +20,9 @@ open class ConfigNewDeliveryAddressFragment :
          * */
         const val  PAGER_POS = 1
     }
+
+    override fun title()
+        = R.string.config_delivery_address_tab_new
 
     override fun getLayoutResourceID()
         = R.layout.fragment_config_new_delivery_address

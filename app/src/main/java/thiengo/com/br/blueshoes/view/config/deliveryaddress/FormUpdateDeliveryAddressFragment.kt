@@ -7,8 +7,8 @@ import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.DeliveryAddress
 
 
-class ConfigUpdateDeliveryAddressFragment :
-    ConfigNewDeliveryAddressFragment() {
+class FormUpdateDeliveryAddressFragment :
+    FormNewDeliveryAddressFragment() {
 
     override fun getLayoutResourceID()
         = R.layout.fragment_config_update_delivery_address

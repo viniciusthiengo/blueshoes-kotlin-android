@@ -1,8 +1,9 @@
-package thiengo.com.br.blueshoes.view.config.creditcard
+package thiengo.com.br.blueshoes.view.config
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import thiengo.com.br.blueshoes.view.FormFragment
 
 
 /**
@@ -15,13 +16,16 @@ import androidx.fragment.app.FragmentPagerAdapter
  * eles possam ser utilizados novamente, isso enquanto houver
  * caminho de volta a eles (transição entre Tabs, por exemplo).
  */
-class ConfigCreditCardsSectionsAdapter(
-    val context: Context,
-    fm: FragmentManager ) : FragmentPagerAdapter( fm ) {
+class ConfigSectionsAdapter(
+        private val context: Context,
+        fm: FragmentManager,
+        private vararg val fragments: ConfigFormFragment
+    ) : FragmentPagerAdapter( fm ) {
 
     companion object{
         const val TOTAL_PAGES = 2
-        const val CREDIT_CARDS_PAGE_POS = 0
+        const val FIRST_PAGE_POS = 0
+        const val SECOND_PAGE_POS = 1
     }
 
     /*
@@ -31,15 +35,15 @@ class ConfigCreditCardsSectionsAdapter(
      * */
     override fun getItem( position: Int )
         = when( position ){
-            CREDIT_CARDS_PAGE_POS -> ConfigCreditCardsListFragment()
-            else -> ConfigNewCreditCardFragment()
+            FIRST_PAGE_POS -> fragments[ FIRST_PAGE_POS ]
+            else -> fragments[ SECOND_PAGE_POS ]
         }
 
     override fun getPageTitle( position: Int )
         = context.getString(
             when( position ){
-                CREDIT_CARDS_PAGE_POS -> ConfigCreditCardsListFragment.TAB_TITLE
-                else -> ConfigNewCreditCardFragment.TAB_TITLE
+                FIRST_PAGE_POS -> fragments[ FIRST_PAGE_POS ].title()
+                else -> fragments[ SECOND_PAGE_POS ].title()
             }
         )
 

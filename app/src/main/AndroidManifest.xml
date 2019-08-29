@@ -39,24 +39,24 @@
                 android:label="@string/title_activity_sign_up"
                 android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-                android:name=".view.AccountSettingsActivity"
+                android:name=".view.config.AccountSettingsActivity"
                 android:label="@string/title_activity_account_settings"
                 android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-                android:name=".view.ConfigProfileActivity"
+                android:name=".view.config.profile.ProfileActivity"
                 android:label="@string/title_activity_config_profile"
                 android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-                android:name=".view.config.connectiondata.ConfigConnectionDataActivity"
+                android:name=".view.config.connectiondata.ConnectDataActivity"
                 android:label="@string/title_activity_config_connection_data"
                 android:theme="@style/AppTheme.NoActionBar" />
         <activity
-                android:name=".view.config.creditcard.ConfigCreditCardsActivity"
+                android:name=".view.config.creditcard.CreditCardsActivity"
                 android:label="@string/title_activity_config_credit_cards"
                 android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".view.config.deliveryaddress.ConfigDeliveryAddressesActivity"
+            android:name=".view.config.deliveryaddress.DeliveryAddressesActivity"
             android:label="@string/title_activity_config_delivery_addresses"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

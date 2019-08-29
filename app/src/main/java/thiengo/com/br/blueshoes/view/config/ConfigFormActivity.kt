@@ -1,14 +1,15 @@
-package thiengo.com.br.blueshoes.view.config.deliveryaddress
+package thiengo.com.br.blueshoes.view.config
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_tabs_user_config.*
 import thiengo.com.br.blueshoes.R
 
-
-class ConfigDeliveryAddressesActivity :
-    AppCompatActivity() {
+abstract class ConfigFormActivity : AppCompatActivity() {
 
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
@@ -35,11 +36,7 @@ class ConfigDeliveryAddressesActivity :
          * Criando o adaptador de fragmentos que ficarão expostos
          * no ViewPager.
          * */
-        val sectionsPagerAdapter =
-            ConfigDeliveryAddressesSectionsAdapter(
-                this,
-                supportFragmentManager
-            )
+        val sectionsPagerAdapter = getSectionsAdapter()
 
         /*
          * Acessando o ViewPager e vinculando o adaptador de
@@ -59,39 +56,13 @@ class ConfigDeliveryAddressesActivity :
      * Para permitir que o back button tenha a ação de volta para
      * a atividade anterior.
      * */
-    override fun onOptionsItemSelected( item: MenuItem ): Boolean {
-
+    override fun onOptionsItemSelected( item: MenuItem ) : Boolean {
         if( item.itemId == android.R.id.home ){
-            onBackPressed()
+            finish()
             return true
         }
-
         return super.onOptionsItemSelected( item )
     }
 
-
-    override fun onBackPressed() {
-        val fragmentsInStack = supportFragmentManager.backStackEntryCount
-
-        /*
-         * Se houver algum fragmento em pilha de fragmentos
-         * e o fragmento atual em tela não for o fragment de
-         * formulário de novo endereço de entrega, então o
-         * próximo fragmento da pilha de fragmentos é que
-         * deve ser apresentado.
-         *
-         * Caso contrário, volte a atividade anterior via
-         * finish().
-         * */
-        if( fragmentsInStack > 0
-            && isNewDeliveryAddressFormNotInScreen() ){
-            supportFragmentManager.popBackStack()
-        }
-        else {
-            finish()
-        }
-    }
-
-    private fun isNewDeliveryAddressFormNotInScreen() : Boolean
-        = view_pager.currentItem != ConfigNewDeliveryAddressFragment.PAGER_POS
+    abstract fun getSectionsAdapter() : FragmentPagerAdapter
 }

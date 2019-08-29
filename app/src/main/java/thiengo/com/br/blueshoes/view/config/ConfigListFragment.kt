@@ -1,37 +1,22 @@
-package thiengo.com.br.blueshoes.view.config.deliveryaddress
+package thiengo.com.br.blueshoes.view.config
 
 
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_config_delivery_addresses_list.*
+import kotlinx.android.synthetic.main.fragment_config_list.*
 import thiengo.com.br.blueshoes.R
-import thiengo.com.br.blueshoes.data.DeliveryAddressesDataBase
-import thiengo.com.br.blueshoes.view.FormFragment
 
 
-class ConfigDeliveryAddressesListFragment :
-    FormFragment() {
+abstract class ConfigListFragment : ConfigFormFragment() {
 
-    companion object{
-        const val TAB_TITLE = R.string.config_delivery_addresses_tab_list
-    }
-
-    private var callbackMainButtonUpdate : (Boolean)->Unit = {}
-    private var callbackBlockFields : (Boolean)->Unit = {}
-    private var callbackRemoveItem : (Boolean)->Unit = {}
-
+    var callbackMainButtonUpdate : (Boolean)->Unit = {}
+    var callbackBlockFields : (Boolean)->Unit = {}
+    var callbackRemoveItem : (Boolean)->Unit = {}
 
     override fun getLayoutResourceID()
-        = R.layout.fragment_config_delivery_addresses_list
-
-    override fun backEndFakeDelay() {
-        backEndFakeDelay(
-            true,
-            getString( R.string.delivery_address_removed )
-        )
-    }
+        = R.layout.fragment_config_list
 
     override fun blockFields(status: Boolean) {
         callbackBlockFields( status )
@@ -47,7 +32,7 @@ class ConfigDeliveryAddressesListFragment :
      * do RecyclerView para assim poder atualizar os itens
      * de adapter.
      * */
-    fun callbacksToRemoveItem(
+    fun callbacksToChangeItem(
         mainButtonUpdate: (Boolean)->Unit,
         blockFields: (Boolean)->Unit,
         removeItem: (Boolean)->Unit ){
@@ -65,21 +50,20 @@ class ConfigDeliveryAddressesListFragment :
     }
 
     /*
-     * Método que inicializa a lista de endereços de entrega.
+     * Método que inicializa a lista de cartões de crédito.
      * */
     private fun initItems(){
-        rv_delivery_addresses.setHasFixedSize( false )
+        rv_items.setHasFixedSize( false )
 
         val layoutManager = LinearLayoutManager( activity )
-        rv_delivery_addresses.layoutManager = layoutManager
+        rv_items.layoutManager = layoutManager
 
-        val adapter = ConfigDeliveryAddressesListItemsAdapter(
-            this,
-            DeliveryAddressesDataBase.getItems()
-        )
+        val adapter = getRecyclerViewAdapter()
         adapter.registerAdapterDataObserver( RecyclerViewObserver() )
-        rv_delivery_addresses.adapter = adapter
+        rv_items.adapter = adapter
     }
+
+    abstract fun getRecyclerViewAdapter() : RecyclerView.Adapter<out RecyclerView.ViewHolder>
 
     /*
      * Com o RecyclerView.AdapterDataObserver é possível
@@ -91,11 +75,14 @@ class ConfigDeliveryAddressesListFragment :
     inner class RecyclerViewObserver :
         RecyclerView.AdapterDataObserver() {
 
-        override fun onItemRangeRemoved(positionStart: Int, itemCount: Int) {
-            super.onItemRangeRemoved(positionStart, itemCount)
+        override fun onItemRangeRemoved(
+            positionStart: Int,
+            itemCount: Int ) {
+
+            super.onItemRangeRemoved( positionStart, itemCount )
 
             tv_empty_list.visibility =
-                if( rv_delivery_addresses.adapter!!.itemCount == 0 )
+                if( rv_items.adapter!!.itemCount == 0 )
                     View.VISIBLE
                 else
                     View.GONE

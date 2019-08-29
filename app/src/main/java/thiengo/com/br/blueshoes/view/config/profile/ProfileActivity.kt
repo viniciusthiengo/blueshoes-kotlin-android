@@ -1,4 +1,4 @@
-package thiengo.com.br.blueshoes.view
+package thiengo.com.br.blueshoes.view.config.profile
 
 import android.app.Activity
 import android.content.Intent
@@ -19,9 +19,10 @@ import kotlinx.android.synthetic.main.content_config_profile.*
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.User
 import thiengo.com.br.blueshoes.util.validate
+import thiengo.com.br.blueshoes.view.FormActivity
 
 
-class ConfigProfileActivity :
+class ProfileActivity :
     FormActivity(),
     KeyboardUtils.OnSoftInputChangedListener {
 

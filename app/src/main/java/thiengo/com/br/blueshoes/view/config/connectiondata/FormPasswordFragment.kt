@@ -7,14 +7,14 @@ import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.util.isValidPassword
 import thiengo.com.br.blueshoes.util.validate
 import thiengo.com.br.blueshoes.view.FormFragment
+import thiengo.com.br.blueshoes.view.config.ConfigFormFragment
 
 
-class ConfigPasswordFragment :
-    FormFragment() {
+class FormPasswordFragment :
+    ConfigFormFragment() {
 
-    companion object{
-        const val TAB_TITLE = R.string.config_connection_data_tab_password
-    }
+    override fun title()
+        = R.string.config_connection_data_tab_password
 
     override fun getLayoutResourceID()
         = R.layout.fragment_config_password

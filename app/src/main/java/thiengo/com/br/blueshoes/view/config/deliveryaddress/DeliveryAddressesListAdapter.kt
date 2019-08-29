@@ -10,13 +10,14 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.DeliveryAddress
+import thiengo.com.br.blueshoes.view.config.ConfigListFragment
 
 
-class ConfigDeliveryAddressesListItemsAdapter(
-        private val fragment : ConfigDeliveryAddressesListFragment,
+class DeliveryAddressesListAdapter(
+        private val fragment : ConfigListFragment,
         private val items: MutableList<DeliveryAddress>
     ) :
-    RecyclerView.Adapter<ConfigDeliveryAddressesListItemsAdapter.ViewHolder>() {
+    RecyclerView.Adapter<DeliveryAddressesListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -103,7 +104,7 @@ class ConfigDeliveryAddressesListItemsAdapter(
 
         private fun toRemove( position: Int ){
 
-            fragment.callbacksToRemoveItem(
+            fragment.callbacksToChangeItem(
                 {
                     status ->
                         btRemove.text =
@@ -131,7 +132,7 @@ class ConfigDeliveryAddressesListItemsAdapter(
 
         private fun toUpdate( position: Int ){
 
-            val updateFrag = ConfigUpdateDeliveryAddressFragment()
+            val updateFrag = FormUpdateDeliveryAddressFragment()
 
             /*
              * Colocando como dado de transição o item selecionado para

@@ -1,4 +1,4 @@
-package thiengo.com.br.blueshoes.view
+package thiengo.com.br.blueshoes.view.config
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -80,7 +80,7 @@ class AccountSettingsActivity :
         rv_account_settings_items.addItemDecoration( divider )
 
         rv_account_settings_items.adapter = AccountSettingsItemsAdapter(
-            AccountSettingsItemsDataBase.getItems( this )
+            AccountSettingsItemsDataBase.getItems(this)
         )
     }
 }

@@ -7,14 +7,14 @@ import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.util.isValidEmail
 import thiengo.com.br.blueshoes.util.validate
 import thiengo.com.br.blueshoes.view.FormFragment
+import thiengo.com.br.blueshoes.view.config.ConfigFormFragment
 
 
-class ConfigEmailFragment :
-    FormFragment() {
+class FormEmailFragment :
+    ConfigFormFragment() {
 
-    companion object{
-        const val TAB_TITLE = R.string.config_connection_data_tab_email
-    }
+    override fun title()
+        = R.string.config_connection_data_tab_email
 
     override fun getLayoutResourceID()
         = R.layout.fragment_config_email

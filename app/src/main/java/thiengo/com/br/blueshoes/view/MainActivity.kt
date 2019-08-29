@@ -24,7 +24,7 @@ import thiengo.com.br.blueshoes.domain.User
 import thiengo.com.br.blueshoes.util.NavMenuItemDetailsLookup
 import thiengo.com.br.blueshoes.util.NavMenuItemKeyProvider
 import thiengo.com.br.blueshoes.util.NavMenuItemPredicate
-
+import thiengo.com.br.blueshoes.view.config.AccountSettingsActivity
 
 
 class MainActivity :

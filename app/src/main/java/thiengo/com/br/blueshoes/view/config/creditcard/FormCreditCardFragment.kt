@@ -8,16 +8,15 @@ import kotlinx.android.synthetic.main.fragment_config_new_credit_card.*
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.util.isValidCNPJ
 import thiengo.com.br.blueshoes.util.isValidCPF
-import thiengo.com.br.blueshoes.view.FormFragment
+import thiengo.com.br.blueshoes.view.config.ConfigFormFragment
 
 
-class ConfigNewCreditCardFragment :
-    FormFragment(),
+class FormCreditCardFragment :
+    ConfigFormFragment(),
     View.OnFocusChangeListener{
 
-    companion object{
-        const val TAB_TITLE = R.string.config_credit_cards_tab_new
-    }
+    override fun title()
+        = R.string.config_credit_cards_tab_new
 
     override fun getLayoutResourceID()
         = R.layout.fragment_config_new_credit_card

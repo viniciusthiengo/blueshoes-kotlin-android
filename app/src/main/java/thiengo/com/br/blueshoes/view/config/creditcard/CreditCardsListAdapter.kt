@@ -8,12 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import thiengo.com.br.blueshoes.R
 import thiengo.com.br.blueshoes.domain.CreditCard
+import thiengo.com.br.blueshoes.view.config.ConfigListFragment
 
-class ConfigCreditCardsListItemsAdapter(
-        private val fragment : ConfigCreditCardsListFragment,
+class CreditCardsListAdapter(
+        private val fragment : ConfigListFragment,
         private val items: MutableList<CreditCard>
     ) :
-    RecyclerView.Adapter<ConfigCreditCardsListItemsAdapter.ViewHolder>() {
+    RecyclerView.Adapter<CreditCardsListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -75,7 +76,7 @@ class ConfigCreditCardsListItemsAdapter(
              * */
             val selectedItem = adapterPosition
 
-            fragment.callbacksToUpdateItem(
+            fragment.callbacksToChangeItem(
                 {
                     status ->
                         btRemove.text =

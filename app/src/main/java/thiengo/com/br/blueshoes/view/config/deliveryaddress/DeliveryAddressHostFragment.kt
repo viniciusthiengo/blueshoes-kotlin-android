@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import thiengo.com.br.blueshoes.R
+import thiengo.com.br.blueshoes.view.config.ConfigFormFragment
 
 
 /*
@@ -15,8 +16,11 @@ import thiengo.com.br.blueshoes.R
  * fácil alternância de fragmentos dentro de uma mesma
  * tela de ViewPager.
  * */
-class ConfigDeliveryAddressHostFragment
-    : Fragment() {
+class DeliveryAddressHostFragment
+    : ConfigFormFragment() {
+
+    override fun title()
+        = DeliveryAddressesListFragment.TAB_TITLE
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,11 +57,19 @@ class ConfigDeliveryAddressHostFragment
             transaction
                 .replace(
                     R.id.fl_root,
-                    ConfigDeliveryAddressesListFragment()
+                    DeliveryAddressesListFragment()
                 )
                 .commit()
         }
 
         return view
     }
+
+    override fun getLayoutResourceID() = 0
+
+    override fun backEndFakeDelay() {}
+
+    override fun blockFields(status: Boolean) {}
+
+    override fun isMainButtonSending(status: Boolean) {}
 }

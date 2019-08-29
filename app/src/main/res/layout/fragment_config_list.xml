@@ -10,11 +10,10 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:text="@string/delivery_address_list_empty"/>
+        android:padding="30dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_delivery_addresses"
+        android:id="@+id/rv_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"/>
