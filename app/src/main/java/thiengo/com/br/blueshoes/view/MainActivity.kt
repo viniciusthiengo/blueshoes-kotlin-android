@@ -25,6 +25,7 @@ import thiengo.com.br.blueshoes.util.NavMenuItemDetailsLookup
 import thiengo.com.br.blueshoes.util.NavMenuItemKeyProvider
 import thiengo.com.br.blueshoes.util.NavMenuItemPredicate
 import thiengo.com.br.blueshoes.view.config.AccountSettingsActivity
+import thiengo.com.br.blueshoes.view.shoes.AllShoesListFragment
 
 
 class MainActivity :
@@ -250,7 +251,7 @@ class MainActivity :
              * */
             var fragId = intent?.getIntExtra( FRAGMENT_ID, 0 )
             if( fragId == 0 ){
-                fragId = R.id.item_about
+                fragId = R.id.item_all_shoes
             }
 
             fragment = getFragment( fragId!!.toLong() )
@@ -265,7 +266,7 @@ class MainActivity :
             R.id.item_about.toLong() -> AboutFragment()
             R.id.item_contact.toLong() -> ContactFragment()
             R.id.item_privacy_policy.toLong() -> PrivacyPolicyFragment()
-            else -> AboutFragment()
+            else -> AllShoesListFragment()
         }
     }
 

@@ -408,4 +408,29 @@
 
     <string name="update_delivery_address">Atualizar endereço</string>
     <string name="update_delivery_address_going">Atualizando&#8230;</string>
+
+
+    <!-- AllShoesListFragment -->
+    <string name="all_shoes_list_frag_title">BlueShoes Calçados</string>
+
+    <string name="offer">Oferta</string>
+    <string name="money_sign">R$</string>
+    <string name="in_until">em até</string>
+    <string name="of">de</string>
+
+    <string name="content_desc_rate_star_1">
+        Primeira estrela da medição de avaliação dos compradores do tênis.
+    </string>
+    <string name="content_desc_rate_star_2">
+        Segunda estrela da medição de avaliação dos compradores do tênis.
+    </string>
+    <string name="content_desc_rate_star_3">
+        Terceira estrela da medição de avaliação dos compradores do tênis.
+    </string>
+    <string name="content_desc_rate_star_4">
+        Quarta estrela da medição de avaliação dos compradores do tênis.
+    </string>
+    <string name="content_desc_rate_star_5">
+        Quinta estrela da medição de avaliação dos compradores do tênis.
+    </string>
 </resources>

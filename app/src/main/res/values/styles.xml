@@ -182,4 +182,12 @@
         <item name="android:paddingTop">11dp</item>
         <item name="android:background">@drawable/bg_form_spinner</item>
     </style>
+
+    <style name="ImageViewRateStarItemList">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">@color/colorMediumYellow</item>
+    </style>
 </resources>

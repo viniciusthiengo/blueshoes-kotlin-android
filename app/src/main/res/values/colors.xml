@@ -36,4 +36,7 @@
 
     <color name="colorLightRed">#F85F62</color>
     <color name="colorLightBlue">#00A4FF</color>
+
+    <color name="colorMediumYellow">#FFFFD840</color>
+    <color name="colorMediumRed">#FF0000</color>
 </resources>

@@ -44,6 +44,9 @@ dependencies {
 
     /* Máscara EditText API */
     implementation 'com.github.santalu:mask-edittext:1.1.1'
+
+    /* Picasso API - Carregamento e cache de imagens */
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
 
 androidExtensions {
