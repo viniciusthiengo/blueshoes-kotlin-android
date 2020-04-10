@@ -58,7 +58,7 @@ Não deixe de se inscrever na lista de e-mails do Blog 📫 para receber com exc
 
 ### AndroidX
 
-O projeto de m-commerce já está configurado com o AndroidX, na verdade isso ocorreu na aula [Migrando Para o AndroidX e Construindo a Galeria Para Foto de Perfil](https://www.thiengo.com.br/migrando-para-o-androidx-e-construindo-a-galeria-para-foto-de-perfil-android-m-commerce).
+O projeto de m-commerce já está configurado com o AndroidX, na verdade essa migração ocorreu na 14ª aula, mais precisamente a aula [Migrando Para o AndroidX e Construindo a Galeria Para Foto de Perfil](https://www.thiengo.com.br/migrando-para-o-androidx-e-construindo-a-galeria-para-foto-de-perfil-android-m-commerce).
 
 As aulas anteriores a está ainda estavam com a codificação sem uso do AndroidX.
 
