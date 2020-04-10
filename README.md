@@ -52,15 +52,15 @@ A ordem a ser seguida é exatamente a mesma ordem apresentada abaixo:
 
 19. [Como Desenvolver a Tela de Listagem de Calçados](https://www.thiengo.com.br/como-desenvolver-a-tela-de-listagem-de-calcados-android-m-commerce).
 
+### Novas aulas
+
+Não deixe de se inscrever na lista de e-mails do Blog 📫 para receber com exclusividade e em primeira mão as novas aulas do projeto Android de mobile-commerce.
+
 ### AndroidX
 
 O projeto de m-commerce já está configurado com o AndroidX, na verdade isso ocorreu na aula [Migrando Para o AndroidX e Construindo a Galeria Para Foto de Perfil](https://www.thiengo.com.br/migrando-para-o-androidx-e-construindo-a-galeria-para-foto-de-perfil-android-m-commerce).
 
 As aulas anteriores a está ainda estavam com a codificação sem uso do AndroidX.
-
-## Novas aulas
-
-Não deixe de se inscrever na lista de e-mails do Blog 📫 para receber com exclusividade e em primeira mão as novas vídeo aulas do projeto de mobile-commerce.
 
 ## Dúvidas e dicas
 
