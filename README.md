@@ -60,7 +60,7 @@ As aulas anteriores a está ainda estavam com a codificação sem uso do Android
 
 ## Novas aulas
 
-Não deixe de se inscrever na lista de e-mails do Blog 📫 para receber com exclusividade e em primeira mão as novas vídeo aulas do projeto m-commerce.
+Não deixe de se inscrever na lista de e-mails do Blog 📫 para receber com exclusividade e em primeira mão as novas vídeo aulas do projeto de mobile-commerce.
 
 ## Dúvidas e dicas
 
