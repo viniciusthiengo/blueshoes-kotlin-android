@@ -14,8 +14,6 @@ A seguir a lista de aulas já disponíveis sobre esse projeto Android de mobile-
 
 A ordem a ser seguida é exatamente a mesma ordem apresentada abaixo:
 
-A seguir a lista de todas as aulas já disponíveis do projeto Android mobile-commerce:
-
 1. [Android Mobile-Commerce, Apresentação e Protótipo do Projeto](https://www.thiengo.com.br/android-mobile-commerce-apresentacao-e-prototipo-do-projeto);
 
 2. [Início de Projeto e Menu Gaveta Customizado](https://www.thiengo.com.br/inicio-de-projeto-e-menu-gaveta-customizado-android-m-commerce);
