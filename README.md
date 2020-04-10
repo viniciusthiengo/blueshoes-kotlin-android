@@ -1,6 +1,6 @@
 # BlueShoes - mobile-commerce (Kotlin Android)
 
-Projeto Kotlin Android da série de artigos sobre a construção de um Android mobile-commerce do Blog [Thiengo.com.br](https://www.thiengo.com.br).
+Projeto Kotlin Android da série de artigos sobre a construção de um Android mobile-commerce. Série do Blog [Thiengo.com.br](https://www.thiengo.com.br).
 
 A principal proposta dessa série de artigos é apresentar os mais variados caminhos e componentes utilizados na construção de um aplicativo Android profissional.
 
